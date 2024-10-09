@@ -33,6 +33,7 @@
 		54EBD7532CB662CB00581021 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD7522CB662CB00581021 /* Reusable.swift */; };
 		54EBD7552CB662F600581021 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD7542CB662F600581021 /* BaseViewController.swift */; };
 		54EBD7572CB663C400581021 /* MediaDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD7562CB663C400581021 /* MediaDetail.swift */; };
+		54EBD75D2CB66B8F00581021 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD75C2CB66B8F00581021 /* BaseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		54EBD7522CB662CB00581021 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		54EBD7542CB662F600581021 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		54EBD7562CB663C400581021 /* MediaDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetail.swift; sourceTree = "<group>"; };
+		54EBD75C2CB66B8F00581021 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				54EBD7542CB662F600581021 /* BaseViewController.swift */,
+				54EBD75C2CB66B8F00581021 /* BaseView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				54EBD7052CB519CD00581021 /* AppDelegate.swift in Sources */,
 				54EBD7072CB519CD00581021 /* SceneDelegate.swift in Sources */,
 				54EBD7552CB662F600581021 /* BaseViewController.swift in Sources */,
+				54EBD75D2CB66B8F00581021 /* BaseView.swift in Sources */,
 				54EBD74F2CB6627500581021 /* DataManager.swift in Sources */,
 				54EBD74D2CB661E100581021 /* MediaResult.swift in Sources */,
 			);
