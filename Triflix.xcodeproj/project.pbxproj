@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54C060CA2CB6705400B8B051 /* FavoriteMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C060C92CB6705400B8B051 /* FavoriteMedia.swift */; };
 		54EBD7052CB519CD00581021 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD7042CB519CD00581021 /* AppDelegate.swift */; };
 		54EBD7072CB519CD00581021 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD7062CB519CD00581021 /* SceneDelegate.swift */; };
 		54EBD7092CB519CD00581021 /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD7082CB519CD00581021 /* TrendingViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		54C060C92CB6705400B8B051 /* FavoriteMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMedia.swift; sourceTree = "<group>"; };
 		54EBD7012CB519CD00581021 /* Triflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Triflix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54EBD7042CB519CD00581021 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54EBD7062CB519CD00581021 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		54C060C82CB6704B00B8B051 /* RealmModel */ = {
+			isa = PBXGroup;
+			children = (
+				54C060C92CB6705400B8B051 /* FavoriteMedia.swift */,
+			);
+			path = RealmModel;
+			sourceTree = "<group>";
+		};
 		54EBD6F82CB519CD00581021 = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				54EBD74E2CB6627500581021 /* DataManager.swift */,
+				54C060C82CB6704B00B8B051 /* RealmModel */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -333,6 +344,7 @@
 				54EBD7572CB663C400581021 /* MediaDetail.swift in Sources */,
 				54EBD7442CB585FB00581021 /* TargetType.swift in Sources */,
 				54EBD7532CB662CB00581021 /* Reusable.swift in Sources */,
+				54C060CA2CB6705400B8B051 /* FavoriteMedia.swift in Sources */,
 				54EBD7222CB51AC800581021 /* DetailViewController.swift in Sources */,
 				54EBD7052CB519CD00581021 /* AppDelegate.swift in Sources */,
 				54EBD7072CB519CD00581021 /* SceneDelegate.swift in Sources */,
