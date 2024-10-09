@@ -1,5 +1,5 @@
 //
-//  DataManager.swift
+//  MediaRepository.swift
 //  Triflix
 //
 //  Created by 이찬호 on 10/9/24.
@@ -8,15 +8,15 @@
 import Foundation
 import RealmSwift
 
-final class DataManager {
-    static let shared = DataManager()
+final class MediaRepository {
+    static let shared = MediaRepository()
     
     private let realm = try! Realm()
     
     private init() {}
 }
 
-extension DataManager {
+extension MediaRepository {
     func printFileURL() {
         print(realm.configuration.fileURL!)
     }

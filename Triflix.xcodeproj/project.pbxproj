@@ -33,7 +33,7 @@
 		54EBD7482CB58CD100581021 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD7472CB58CD100581021 /* APIKey.swift */; };
 		54EBD74A2CB58D5300581021 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD7492CB58D5300581021 /* APIManager.swift */; };
 		54EBD74D2CB661E100581021 /* MediaResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD74C2CB661E100581021 /* MediaResult.swift */; };
-		54EBD74F2CB6627500581021 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD74E2CB6627500581021 /* DataManager.swift */; };
+		54EBD74F2CB6627500581021 /* MediaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD74E2CB6627500581021 /* MediaRepository.swift */; };
 		54EBD7512CB6629500581021 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD7502CB6629500581021 /* Date+.swift */; };
 		54EBD7532CB662CB00581021 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD7522CB662CB00581021 /* Reusable.swift */; };
 		54EBD7552CB662F600581021 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD7542CB662F600581021 /* BaseViewController.swift */; };
@@ -64,7 +64,7 @@
 		54EBD7472CB58CD100581021 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		54EBD7492CB58D5300581021 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		54EBD74C2CB661E100581021 /* MediaResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaResult.swift; sourceTree = "<group>"; };
-		54EBD74E2CB6627500581021 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		54EBD74E2CB6627500581021 /* MediaRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaRepository.swift; sourceTree = "<group>"; };
 		54EBD7502CB6629500581021 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		54EBD7522CB662CB00581021 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		54EBD7542CB662F600581021 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -222,7 +222,7 @@
 		54EBD72B2CB51D3900581021 /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				54EBD74E2CB6627500581021 /* DataManager.swift */,
+				54EBD74E2CB6627500581021 /* MediaRepository.swift */,
 				54C060C82CB6704B00B8B051 /* RealmModel */,
 			);
 			path = Database;
@@ -366,7 +366,7 @@
 				54EBD7552CB662F600581021 /* BaseViewController.swift in Sources */,
 				54C060D02CB6777900B8B051 /* ViewModelProtocol.swift in Sources */,
 				54EBD75D2CB66B8F00581021 /* BaseView.swift in Sources */,
-				54EBD74F2CB6627500581021 /* DataManager.swift in Sources */,
+				54EBD74F2CB6627500581021 /* MediaRepository.swift in Sources */,
 				54EBD74D2CB661E100581021 /* MediaResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
