@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import RxSwift
 
 class TrendingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-
 }
+
+
 
