@@ -13,6 +13,7 @@ final class FavoriteView: BaseView {
     let tableView = {
         let view = UITableView()
         view.register(FavoriteTableViewCell.self, forCellReuseIdentifier: FavoriteTableViewCell.id)
+        view.rowHeight = 120
         return view
     }()
     
