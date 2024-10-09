@@ -114,7 +114,6 @@
 				54EBD71B2CB51A1D00581021 /* Detail */,
 				54EBD71A2CB51A0A00581021 /* Search */,
 				54EBD7192CB519FF00581021 /* Trending */,
-				54EBD7082CB519CD00581021 /* TrendingViewController.swift */,
 				54EBD71D2CB51A5F00581021 /* TabBarViewController.swift */,
 			);
 			path = Presentation;
@@ -123,6 +122,7 @@
 		54EBD7192CB519FF00581021 /* Trending */ = {
 			isa = PBXGroup;
 			children = (
+				54EBD7082CB519CD00581021 /* TrendingViewController.swift */,
 			);
 			name = Trending;
 			sourceTree = "<group>";
