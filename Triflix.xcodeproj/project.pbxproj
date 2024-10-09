@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		54C060CA2CB6705400B8B051 /* FavoriteMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C060C92CB6705400B8B051 /* FavoriteMedia.swift */; };
+		54C060D02CB6777900B8B051 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C060CF2CB6777900B8B051 /* ViewModelProtocol.swift */; };
 		54EBD7052CB519CD00581021 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD7042CB519CD00581021 /* AppDelegate.swift */; };
 		54EBD7072CB519CD00581021 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD7062CB519CD00581021 /* SceneDelegate.swift */; };
 		54EBD7092CB519CD00581021 /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD7082CB519CD00581021 /* TrendingViewController.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		54C060C92CB6705400B8B051 /* FavoriteMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMedia.swift; sourceTree = "<group>"; };
+		54C060CF2CB6777900B8B051 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		54EBD7012CB519CD00581021 /* Triflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Triflix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54EBD7042CB519CD00581021 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54EBD7062CB519CD00581021 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				54EBD7522CB662CB00581021 /* Reusable.swift */,
+				54C060CF2CB6777900B8B051 /* ViewModelProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				54EBD7052CB519CD00581021 /* AppDelegate.swift in Sources */,
 				54EBD7072CB519CD00581021 /* SceneDelegate.swift in Sources */,
 				54EBD7552CB662F600581021 /* BaseViewController.swift in Sources */,
+				54C060D02CB6777900B8B051 /* ViewModelProtocol.swift in Sources */,
 				54EBD75D2CB66B8F00581021 /* BaseView.swift in Sources */,
 				54EBD74F2CB6627500581021 /* DataManager.swift in Sources */,
 				54EBD74D2CB661E100581021 /* MediaResult.swift in Sources */,
