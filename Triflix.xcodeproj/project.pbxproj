@@ -36,6 +36,9 @@
 		54EBD7552CB662F600581021 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD7542CB662F600581021 /* BaseViewController.swift */; };
 		54EBD7572CB663C400581021 /* MediaDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD7562CB663C400581021 /* MediaDetail.swift */; };
 		54EBD75D2CB66B8F00581021 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD75C2CB66B8F00581021 /* BaseView.swift */; };
+		68D9D34A2CB6979B00CFD7AD /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D9D3492CB6979B00CFD7AD /* DetailView.swift */; };
+		68D9D34C2CB697A100CFD7AD /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D9D34B2CB697A100CFD7AD /* DetailViewModel.swift */; };
+		68D9D34E2CB697B000CFD7AD /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D9D34D2CB697B000CFD7AD /* DetailCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +67,9 @@
 		54EBD7542CB662F600581021 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		54EBD7562CB663C400581021 /* MediaDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetail.swift; sourceTree = "<group>"; };
 		54EBD75C2CB66B8F00581021 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		68D9D3492CB6979B00CFD7AD /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		68D9D34B2CB697A100CFD7AD /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		68D9D34D2CB697B000CFD7AD /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +157,9 @@
 			isa = PBXGroup;
 			children = (
 				54EBD7212CB51AC800581021 /* DetailViewController.swift */,
+				68D9D3492CB6979B00CFD7AD /* DetailView.swift */,
+				68D9D34B2CB697A100CFD7AD /* DetailViewModel.swift */,
+				68D9D34D2CB697B000CFD7AD /* DetailCell.swift */,
 			);
 			name = Detail;
 			sourceTree = "<group>";
@@ -345,7 +354,10 @@
 				54EBD7462CB58C0100581021 /* Router.swift in Sources */,
 				54EBD7512CB6629500581021 /* Date+.swift in Sources */,
 				54EBD7572CB663C400581021 /* MediaDetail.swift in Sources */,
+				68D9D34E2CB697B000CFD7AD /* DetailCell.swift in Sources */,
+				68D9D34C2CB697A100CFD7AD /* DetailViewModel.swift in Sources */,
 				54EBD7442CB585FB00581021 /* TargetType.swift in Sources */,
+				68D9D34A2CB6979B00CFD7AD /* DetailView.swift in Sources */,
 				54EBD7532CB662CB00581021 /* Reusable.swift in Sources */,
 				54C060CA2CB6705400B8B051 /* FavoriteMedia.swift in Sources */,
 				54EBD7222CB51AC800581021 /* DetailViewController.swift in Sources */,
