@@ -1,34 +1,36 @@
 //
-//  DataManager.swift
+//  MediaRepository.swift
 //  Triflix
 //
 //  Created by 이찬호 on 10/9/24.
 //
 
-import Foundation
+import UIKit
 import RealmSwift
 
-final class DataManager {
-    static let shared = DataManager()
+final class MediaRepository {
+    static let shared = MediaRepository()
     
     private let realm = try! Realm()
     
     private init() {}
 }
 
-extension DataManager {
+extension MediaRepository {
     func printFileURL() {
         print(realm.configuration.fileURL!)
     }
     
-    func addMedia(_ media: MediaDetail) {
+    func addMedia(media: MediaDetail, image: UIImage?) {
+        PhotoManager.shared.saveImage(image: image, filename: "\(media.id)")
         let object = FavoriteMedia(mediaID: media.id, title: media.title, posterPath: media.poster_path)
         try! realm.write {
             realm.add(object)
         }
     }
     
-    func removeMedia(_ media: FavoriteMedia) {
+    func removeMedia(media: FavoriteMedia) {
+        PhotoManager.shared.removeImage(filename: "\(media.id)")
         try! realm.write {
             realm.delete(media)
         }
