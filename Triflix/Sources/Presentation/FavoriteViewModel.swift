@@ -28,7 +28,7 @@ extension FavoriteViewModel {
         let mediaOutput = PublishSubject<[FavoriteMedia]>()
         input.viewDidLoadTrigger
             .bind(with: self) { owner, _ in
-                let objects = DataManager.shared.readAllMedia()
+                let objects = MediaRepository.shared.readAllMedia()
                 owner.medias = Array(objects)
                 mediaOutput.onNext(owner.medias)
             }
@@ -37,7 +37,7 @@ extension FavoriteViewModel {
         input.deleteIndex
             .bind(with: self) { owner, index in
                 let object = owner.medias[index]
-                DataManager.shared.removeMedia(object)
+                MediaRepository.shared.removeMedia(object)
                 input.viewDidLoadTrigger.onNext(())
             }
             .disposed(by: disposeBag)
