@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		54C060CA2CB6705400B8B051 /* FavoriteMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C060C92CB6705400B8B051 /* FavoriteMedia.swift */; };
+		54C060CC2CB675C300B8B051 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C060CB2CB675C300B8B051 /* FavoriteView.swift */; };
+		54C060CE2CB676CB00B8B051 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C060CD2CB676CB00B8B051 /* FavoriteViewModel.swift */; };
 		54C060D02CB6777900B8B051 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C060CF2CB6777900B8B051 /* ViewModelProtocol.swift */; };
+		54C060D22CB6A71D00B8B051 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C060D12CB6A71D00B8B051 /* FavoriteTableViewCell.swift */; };
 		54EBD7052CB519CD00581021 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD7042CB519CD00581021 /* AppDelegate.swift */; };
 		54EBD7072CB519CD00581021 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD7062CB519CD00581021 /* SceneDelegate.swift */; };
 		54EBD7092CB519CD00581021 /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD7082CB519CD00581021 /* TrendingViewController.swift */; };
@@ -40,7 +43,10 @@
 
 /* Begin PBXFileReference section */
 		54C060C92CB6705400B8B051 /* FavoriteMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMedia.swift; sourceTree = "<group>"; };
+		54C060CB2CB675C300B8B051 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
+		54C060CD2CB676CB00B8B051 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		54C060CF2CB6777900B8B051 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
+		54C060D12CB6A71D00B8B051 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		54EBD7012CB519CD00581021 /* Triflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Triflix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54EBD7042CB519CD00581021 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54EBD7062CB519CD00581021 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +165,9 @@
 			isa = PBXGroup;
 			children = (
 				54EBD7232CB51AE200581021 /* FavoriteViewController.swift */,
+				54C060CB2CB675C300B8B051 /* FavoriteView.swift */,
+				54C060D12CB6A71D00B8B051 /* FavoriteTableViewCell.swift */,
+				54C060CD2CB676CB00B8B051 /* FavoriteViewModel.swift */,
 			);
 			name = Favorite;
 			sourceTree = "<group>";
@@ -342,11 +351,14 @@
 				54EBD7242CB51AE200581021 /* FavoriteViewController.swift in Sources */,
 				54EBD74A2CB58D5300581021 /* APIManager.swift in Sources */,
 				54EBD7482CB58CD100581021 /* APIKey.swift in Sources */,
+				54C060CE2CB676CB00B8B051 /* FavoriteViewModel.swift in Sources */,
 				54EBD7462CB58C0100581021 /* Router.swift in Sources */,
 				54EBD7512CB6629500581021 /* Date+.swift in Sources */,
+				54C060CC2CB675C300B8B051 /* FavoriteView.swift in Sources */,
 				54EBD7572CB663C400581021 /* MediaDetail.swift in Sources */,
 				54EBD7442CB585FB00581021 /* TargetType.swift in Sources */,
 				54EBD7532CB662CB00581021 /* Reusable.swift in Sources */,
+				54C060D22CB6A71D00B8B051 /* FavoriteTableViewCell.swift in Sources */,
 				54C060CA2CB6705400B8B051 /* FavoriteMedia.swift in Sources */,
 				54EBD7222CB51AC800581021 /* DetailViewController.swift in Sources */,
 				54EBD7052CB519CD00581021 /* AppDelegate.swift in Sources */,
