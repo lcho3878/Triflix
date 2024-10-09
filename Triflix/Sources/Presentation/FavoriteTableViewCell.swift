@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 final class FavoriteTableViewCell: UITableViewCell {
-    static var id = "FavoriteTableViewCell"
     
     private let posterImageView = {
         let view = UIImageView()
