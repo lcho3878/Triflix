@@ -23,6 +23,11 @@
 		54EBD73C2CB51F9700581021 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 54EBD73B2CB51F9700581021 /* Alamofire */; };
 		54EBD73F2CB51FA400581021 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 54EBD73E2CB51FA400581021 /* SnapKit */; };
 		54EBD7422CB51FB600581021 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 54EBD7412CB51FB600581021 /* Kingfisher */; };
+		54EBD7442CB585FB00581021 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD7432CB585FB00581021 /* TargetType.swift */; };
+		54EBD7462CB58C0100581021 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD7452CB58C0100581021 /* Router.swift */; };
+		54EBD7482CB58CD100581021 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD7472CB58CD100581021 /* APIKey.swift */; };
+		54EBD74A2CB58D5300581021 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD7492CB58D5300581021 /* APIManager.swift */; };
+		54EBD74D2CB661E100581021 /* MediaResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD74C2CB661E100581021 /* MediaResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +43,11 @@
 		54EBD7212CB51AC800581021 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		54EBD7232CB51AE200581021 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		54EBD72E2CB51DE700581021 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		54EBD7432CB585FB00581021 /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
+		54EBD7452CB58C0100581021 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		54EBD7472CB58CD100581021 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		54EBD7492CB58D5300581021 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		54EBD74C2CB661E100581021 /* MediaResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +172,11 @@
 		54EBD72A2CB51D3300581021 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				54EBD74B2CB599AF00581021 /* ResponseModel */,
+				54EBD7432CB585FB00581021 /* TargetType.swift */,
+				54EBD7492CB58D5300581021 /* APIManager.swift */,
+				54EBD7452CB58C0100581021 /* Router.swift */,
+				54EBD7472CB58CD100581021 /* APIKey.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -193,6 +208,14 @@
 				54EBD7182CB519F000581021 /* Presentation */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		54EBD74B2CB599AF00581021 /* ResponseModel */ = {
+			isa = PBXGroup;
+			children = (
+				54EBD74C2CB661E100581021 /* MediaResult.swift */,
+			);
+			path = ResponseModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,9 +308,14 @@
 				54EBD71E2CB51A5F00581021 /* TabBarViewController.swift in Sources */,
 				54EBD7092CB519CD00581021 /* TrendingViewController.swift in Sources */,
 				54EBD7242CB51AE200581021 /* FavoriteViewController.swift in Sources */,
+				54EBD74A2CB58D5300581021 /* APIManager.swift in Sources */,
+				54EBD7482CB58CD100581021 /* APIKey.swift in Sources */,
+				54EBD7462CB58C0100581021 /* Router.swift in Sources */,
+				54EBD7442CB585FB00581021 /* TargetType.swift in Sources */,
 				54EBD7222CB51AC800581021 /* DetailViewController.swift in Sources */,
 				54EBD7052CB519CD00581021 /* AppDelegate.swift in Sources */,
 				54EBD7072CB519CD00581021 /* SceneDelegate.swift in Sources */,
+				54EBD74D2CB661E100581021 /* MediaResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
