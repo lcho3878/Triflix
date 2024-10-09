@@ -6,7 +6,18 @@
 //
 
 import Foundation
+import RxSwift
 
-final class TrendingViewModel {
+final class TrendingViewModel: ViewModelProtocol {
+    
+    let disposeBag = DisposeBag()
+    
+    struct Input {}
+    
+    struct Output {}
+    
+    func transform(input: Input) -> Output {
+        Output()
+    }
     
 }
