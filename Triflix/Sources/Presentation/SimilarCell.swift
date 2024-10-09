@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 final class SimilarCell: UICollectionViewCell {
-    
     let posterImageView = UIImageView()
     
     override init(frame: CGRect) {
