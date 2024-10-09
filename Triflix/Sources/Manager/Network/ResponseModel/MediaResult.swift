@@ -15,7 +15,7 @@ struct MediaResult: Decodable {
     
     struct Media: Decodable {
         let id: Int
-        let poster_path: String
+        let poster_path: String?
         let genre_ids: [Int]
     }
 }
