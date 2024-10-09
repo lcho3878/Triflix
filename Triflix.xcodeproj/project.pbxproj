@@ -32,6 +32,7 @@
 		54EBD7512CB6629500581021 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD7502CB6629500581021 /* Date+.swift */; };
 		54EBD7532CB662CB00581021 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD7522CB662CB00581021 /* Reusable.swift */; };
 		54EBD7552CB662F600581021 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD7542CB662F600581021 /* BaseViewController.swift */; };
+		54EBD7572CB663C400581021 /* MediaDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD7562CB663C400581021 /* MediaDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		54EBD7502CB6629500581021 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		54EBD7522CB662CB00581021 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		54EBD7542CB662F600581021 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		54EBD7562CB663C400581021 /* MediaDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				54EBD74C2CB661E100581021 /* MediaResult.swift */,
+				54EBD7562CB663C400581021 /* MediaDetail.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				54EBD7482CB58CD100581021 /* APIKey.swift in Sources */,
 				54EBD7462CB58C0100581021 /* Router.swift in Sources */,
 				54EBD7512CB6629500581021 /* Date+.swift in Sources */,
+				54EBD7572CB663C400581021 /* MediaDetail.swift in Sources */,
 				54EBD7442CB585FB00581021 /* TargetType.swift in Sources */,
 				54EBD7532CB662CB00581021 /* Reusable.swift in Sources */,
 				54EBD7222CB51AC800581021 /* DetailViewController.swift in Sources */,
