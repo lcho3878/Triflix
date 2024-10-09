@@ -44,7 +44,7 @@ final class DetailViewController: UIViewController {
                 let imageURL = URL(string: "https://image.tmdb.org/t/p/w500\(detailData.backdrop_path)")
                 owner.detailView.posterImageView.kf.setImage(with: imageURL)
                 owner.detailView.titleLabel.text = detailData.title
-                owner.detailView.voteAverageLabel.text = "\(detailData.vote_average)"
+                owner.detailView.voteAverageLabel.text = String(format: "%.1f", detailData.vote_average)
                 owner.detailView.descriptionLabel.text = detailData.overview
             }
             .disposed(by: disposeBag)
