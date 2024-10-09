@@ -36,6 +36,8 @@
 		54EBD7552CB662F600581021 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD7542CB662F600581021 /* BaseViewController.swift */; };
 		54EBD7572CB663C400581021 /* MediaDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD7562CB663C400581021 /* MediaDetail.swift */; };
 		54EBD75D2CB66B8F00581021 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBD75C2CB66B8F00581021 /* BaseView.swift */; };
+		8E3C4E032CB67FC00021896B /* TrendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3C4E022CB67FC00021896B /* TrendingView.swift */; };
+		8E3C4E052CB680F20021896B /* TrendingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3C4E042CB680F20021896B /* TrendingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		54EBD7542CB662F600581021 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		54EBD7562CB663C400581021 /* MediaDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetail.swift; sourceTree = "<group>"; };
 		54EBD75C2CB66B8F00581021 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		8E3C4E022CB67FC00021896B /* TrendingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingView.swift; sourceTree = "<group>"; };
+		8E3C4E042CB680F20021896B /* TrendingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +139,8 @@
 			isa = PBXGroup;
 			children = (
 				54EBD7082CB519CD00581021 /* TrendingViewController.swift */,
+				8E3C4E022CB67FC00021896B /* TrendingView.swift */,
+				8E3C4E042CB680F20021896B /* TrendingViewModel.swift */,
 			);
 			name = Trending;
 			sourceTree = "<group>";
@@ -336,6 +342,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E3C4E032CB67FC00021896B /* TrendingView.swift in Sources */,
 				54EBD7202CB51A9F00581021 /* SearchViewController.swift in Sources */,
 				54EBD71E2CB51A5F00581021 /* TabBarViewController.swift in Sources */,
 				54EBD7092CB519CD00581021 /* TrendingViewController.swift in Sources */,
@@ -356,6 +363,7 @@
 				54EBD75D2CB66B8F00581021 /* BaseView.swift in Sources */,
 				54EBD74F2CB6627500581021 /* DataManager.swift in Sources */,
 				54EBD74D2CB661E100581021 /* MediaResult.swift in Sources */,
+				8E3C4E052CB680F20021896B /* TrendingViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,7 +507,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 82M3Y9RKT2;
+				DEVELOPMENT_TEAM = FPYJAG45SA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Triflix/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -531,7 +539,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 82M3Y9RKT2;
+				DEVELOPMENT_TEAM = FPYJAG45SA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Triflix/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
