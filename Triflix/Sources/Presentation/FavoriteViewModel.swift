@@ -37,7 +37,7 @@ extension FavoriteViewModel {
         input.deleteIndex
             .bind(with: self) { owner, index in
                 let object = owner.medias[index]
-                MediaRepository.shared.removeMedia(object)
+                MediaRepository.shared.removeMedia(media: object)
                 input.viewDidLoadTrigger.onNext(())
             }
             .disposed(by: disposeBag)
