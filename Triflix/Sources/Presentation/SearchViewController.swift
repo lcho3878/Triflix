@@ -34,7 +34,13 @@ final class SearchViewController: UIViewController {
     }
     
     private func bind() {
-        let input = SearchViewModel.Input()
+        let indexPathInput = PublishSubject<[IndexPath]>()
+        
+        let input = SearchViewModel.Input(
+            searchButtonClicked: searchView.searchBar.rx.searchButtonClicked,
+            searchQuery: searchView.searchBar.rx.text.orEmpty,
+            indexPathInput: indexPathInput
+        )
         let output = viewModel.transform(input: input)
         
         output.searchData
@@ -49,6 +55,12 @@ final class SearchViewController: UIViewController {
                     cell.posterImageView.contentMode = .scaleAspectFit
                 }
             }
-            .disposed(by: disposeBag)       
+            .disposed(by: disposeBag)
+        
+        searchView.collectionView.rx.prefetchItems
+            .bind(with: self) { owner, indexPaths in
+                indexPathInput.onNext(indexPaths)
+            }
+            .disposed(by: disposeBag)
     }
 }
