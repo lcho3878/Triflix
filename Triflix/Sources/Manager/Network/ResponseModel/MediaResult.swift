@@ -23,43 +23,43 @@ struct MediaResult: Decodable {
                 for item in genre_ids {
                     switch item {
                     case 28:
-                        genres.append("#Action")
+                        genres.append("Action")
                     case 12:
-                        genres.append("#Adventure")
+                        genres.append("Adventure")
                     case 16:
-                        genres.append("#Animation")
+                        genres.append("Animation")
                     case 35:
-                        genres.append("#Comedy")
+                        genres.append("Comedy")
                     case 80:
-                        genres.append("#Crime")
+                        genres.append("Crime")
                     case 99:
-                        genres.append("#Documentary")
+                        genres.append("Documentary")
                     case 18:
-                        genres.append("#Drama")
+                        genres.append("Drama")
                     case 10751:
-                        genres.append("#Family")
+                        genres.append("Family")
                     case 14:
-                        genres.append("#Fantasy")
+                        genres.append("Fantasy")
                     case 36:
-                        genres.append("#History")
+                        genres.append("History")
                     case 27:
-                        genres.append("#Horror")
+                        genres.append("Horror")
                     case 10402:
-                        genres.append("#Music")
+                        genres.append("Music")
                     case 9648:
-                        genres.append("#Mystery")
+                        genres.append("Mystery")
                     case 10749:
-                        genres.append("#Romance")
+                        genres.append("Romance")
                     case 878:
-                        genres.append("#Science Fiction")
+                        genres.append("Science Fiction")
                     case 10770:
-                        genres.append("#TV Movie")
+                        genres.append("TV Movie")
                     case 53:
-                        genres.append("#Thriller")
+                        genres.append("Thriller")
                     case 10752:
-                        genres.append("#War")
+                        genres.append("War")
                     case 37:
-                        genres.append("#Western")
+                        genres.append("Western")
                     default: break
                     }
                 }
