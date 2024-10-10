@@ -28,7 +28,7 @@ final class TrendingViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewDidLoadTrigger.onNext(())
+      
     }
     
     override func viewDidLoad() {
@@ -81,12 +81,16 @@ extension TrendingViewController {
             .bind(with: self) { owner, value in
                 guard let media = value.1.first else { return }
                 MediaRepository.shared.addMedia(media: media, image: owner.trendingView.mainPosterImageView.image) {
-                    print("이미 저장된 데이터 입니다")
                     let alert = AlertViewController()
+                    alert.alertView.titleLabel.text = "이미 저장된 미디어에요 :)"
                     alert.modalPresentationStyle = .overFullScreen
                     owner.present(alert, animated: true)
-                    
-                } success: {}
+                } success: {
+                    let alert = AlertViewController()
+                    alert.alertView.titleLabel.text = "미디어를 저장했어요 :)"
+                    alert.modalPresentationStyle = .overFullScreen
+                    owner.present(alert, animated: true)
+                }
             }
             .disposed(by: disposeBag)
         
@@ -147,6 +151,8 @@ extension TrendingViewController {
             owner.present(detailNav, animated: true)
         }
         .disposed(by: disposeBag)
+        
+        viewDidLoadTrigger.onNext(())
     }
 }
 
