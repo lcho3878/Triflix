@@ -65,7 +65,7 @@ final class DetailViewModel: ViewModelProtocol {
             .disposed(by: disposeBag)
         
         // similarData
-        APIManager.shared.callRequest(api: .similarMovie(id: id), type: MediaResult.self)
+        APIManager.shared.callRequest(api: .similar(id: id, type: type), type: MediaResult.self)
             .subscribe(with: self) { owner, result in
                 input.similarData.onNext(result.results)
             } onFailure: { owner, error in
