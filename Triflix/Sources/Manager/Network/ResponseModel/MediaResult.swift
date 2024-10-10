@@ -13,8 +13,9 @@ struct MediaResult: Decodable {
     let total_pages: Int
     let total_results: Int
     
-    struct Media: Decodable {
+    struct Media: Decodable, MediaType {
         let id: Int
+        let title: String
         let poster_path: String?
         let genre_ids: [Int]
         var genres: String {
@@ -64,6 +65,25 @@ struct MediaResult: Decodable {
                 }
                 return genres.joined(separator: " ")
             }
+        enum CodingKeys: String, CodingKey {
+            case id
+            case title
+            case poster_path
+            case genre_ids
+            case name
+        }
+
+        init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            id = try container.decode(Int.self, forKey: .id)
+            poster_path = try? container.decode(String?.self, forKey: .poster_path)
+            genre_ids = try container.decode([Int].self, forKey: .genre_ids)
+            
+            if let name = try? container.decode(String.self, forKey: .name) {
+                title = name
+            } else {
+                title = try container.decode(String.self, forKey: .title)
+            }
+        }
     }
 }
-

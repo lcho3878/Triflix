@@ -49,8 +49,6 @@ extension TrendingViewController{
               currWidth?.isActive = true
               currHeight?.isActive = true
               navigationItem.leftBarButtonItem = menuBarItem
- 
-        navigationItem.leftBarButtonItem?.width = 40
         navigationItem.rightBarButtonItems = [trendingView.magnifyingglassItem, trendingView.sparkleItem]
         trendingView.trendingMovieCV.register(PosterImageCell.self, forCellWithReuseIdentifier: PosterImageCell.id)
         trendingView.trendingMovieCV.showsHorizontalScrollIndicator = false
@@ -77,10 +75,21 @@ extension TrendingViewController {
         trendingView.playButton.rx.tap.bind {
             print("재생버튼 탭")
         }.disposed(by: disposeBag)
+    
+        // realm 저장
+        Observable.combineLatest(trendingView.favoriteButton.rx.tap, output.movieOutput)
+            .bind(with: self) { owner, value in
+                guard let media = value.1.first else { return }
+                MediaRepository.shared.addMedia(media: media, image: owner.trendingView.mainPosterImageView.image) {
+                    print("이미 저장된 데이터 입니다")
+                    let alert = AlertViewController()
+                    alert.modalPresentationStyle = .overFullScreen
+                    owner.present(alert, animated: true)
+                    
+                } success: {}
+            }
+            .disposed(by: disposeBag)
         
-        trendingView.favoriteButton.rx.tap.bind {
-            print("찜 버튼 탭")
-        }.disposed(by: disposeBag)
         
         output.movieOutput.bind(with: self) { owner, list in
             guard let url = list.first?.poster_path else { return }
@@ -108,7 +117,7 @@ extension TrendingViewController {
         trendingView.trendingMovieCV.rx.modelSelected(MediaResult.Media.self).bind(with: self) { owner, media in
             let detailVC = DetailViewController()
             detailVC.viewModel.id = media.id
-            detailVC.viewModel.seriesType = .movie
+            detailVC.viewModel.type = .movie
             self.navigationController?.pushViewController(detailVC, animated: true)
         }
         .disposed(by: disposeBag)
@@ -130,7 +139,7 @@ extension TrendingViewController {
         trendingView.trendingTVCV.rx.modelSelected(MediaResult.Media.self).bind(with: self) { owner, media in
             let detailVC = DetailViewController()
             detailVC.viewModel.id = media.id
-            detailVC.viewModel.seriesType = .tv
+            detailVC.viewModel.type = .tv
             self.navigationController?.pushViewController(detailVC, animated: true)
         }
         .disposed(by: disposeBag)
