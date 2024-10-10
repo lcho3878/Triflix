@@ -12,21 +12,21 @@ final class TrendingView: BaseView {
     
     let sparkleItem = UIBarButtonItem()
     let magnifyingglassItem = UIBarButtonItem()
-    let scrollView = {
+    private let scrollView = {
         let sv = UIScrollView()
         sv.isScrollEnabled = true
         return sv
     }()
-    let myView = UIView()
+    private let myView = UIView()
     let mainPosterImageView = {
         let iv = UIImageView()
-        iv.image = UIImage(systemName: "star")
-        iv.backgroundColor = .white
+        iv.backgroundColor = .black
         return iv
     }()
     let mainPosterGenreLabel = {
         let lb = UILabel()
-        lb.text = "어쩌구 저쩌구 라벨이름 블라블라"
+        lb.textColor = .white
+        lb.numberOfLines = 1
         return lb
     }()
     let playButton  = {
@@ -64,8 +64,9 @@ final class TrendingView: BaseView {
     
     static func layout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 40, height: 120) // 추후 사이즈 조절
+        layout.itemSize = CGSize(width: 90, height: 118) // 추후 사이즈 조절
         layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 8
         return layout
     }
     override init(frame: CGRect) {
@@ -83,10 +84,7 @@ final class TrendingView: BaseView {
         magnifyingglassItem.image = UIImage(systemName: "magnifyingglass")
         magnifyingglassItem.tintColor = .white
         //아래 보기 편하라고 만든 색상들 추후 수정(제거)
-        scrollView.backgroundColor = .brown
         myView.backgroundColor = .clear
-        trendingMovieCV.backgroundColor = .blue
-        trendingTVCV.backgroundColor = .red
     }
     
     override func addSubviews() {
@@ -119,7 +117,7 @@ final class TrendingView: BaseView {
         
         mainPosterGenreLabel.snp.makeConstraints {
             $0.bottom.equalTo(playButton.snp.top).offset(-16)
-            $0.horizontalEdges.equalTo(mainPosterImageView.snp.centerX)
+            $0.centerX.equalTo(mainPosterImageView.snp.centerX)
         }
         
         playButton.snp.makeConstraints{
