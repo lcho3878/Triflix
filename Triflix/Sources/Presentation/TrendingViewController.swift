@@ -47,9 +47,9 @@ extension TrendingViewController{
  
         navigationItem.leftBarButtonItem?.width = 40
         navigationItem.rightBarButtonItems = [trendingView.magnifyingglassItem, trendingView.sparkleItem]
-        trendingView.trendingMovieCV.register(SimilarCell.self, forCellWithReuseIdentifier: SimilarCell.id)
+        trendingView.trendingMovieCV.register(PosterImageCell.self, forCellWithReuseIdentifier: PosterImageCell.id)
         trendingView.trendingMovieCV.showsHorizontalScrollIndicator = false
-        trendingView.trendingTVCV.register(SimilarCell.self, forCellWithReuseIdentifier: SimilarCell.id)
+        trendingView.trendingTVCV.register(PosterImageCell.self, forCellWithReuseIdentifier: PosterImageCell.id)
         trendingView.trendingTVCV.showsHorizontalScrollIndicator = false
     }
     
@@ -89,7 +89,7 @@ extension TrendingViewController {
         .disposed(by: disposeBag)
         
         output.movieOutput
-            .bind(to: trendingView.trendingMovieCV.rx.items(cellIdentifier: SimilarCell.id, cellType: SimilarCell.self)) { (row, element, cell) in
+            .bind(to: trendingView.trendingMovieCV.rx.items(cellIdentifier: PosterImageCell.id, cellType: PosterImageCell.self)) { (row, element, cell) in
                 if let imageData = element.poster_path {
                     let imageURL = URL(string: "https://image.tmdb.org/t/p/w500\(imageData)")
                     cell.posterImageView.kf.setImage(with: imageURL, options: [.transition(.fade(1.2))])
@@ -109,7 +109,7 @@ extension TrendingViewController {
         .disposed(by: disposeBag)
         
         output.TVOutput
-            .bind(to: trendingView.trendingTVCV.rx.items(cellIdentifier: SimilarCell.id, cellType: SimilarCell.self)) { (row, element, cell) in
+            .bind(to: trendingView.trendingTVCV.rx.items(cellIdentifier: PosterImageCell.id, cellType: PosterImageCell.self)) { (row, element, cell) in
                 if let imageData = element.poster_path {
                     let imageURL = URL(string: "https://image.tmdb.org/t/p/w500\(imageData)")
                     cell.posterImageView.kf.setImage(with: imageURL, options: [.transition(.fade(1.2))])
