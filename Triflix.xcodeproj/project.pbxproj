@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		546AA1AF2CB7E81100E06CD4 /* MediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546AA1AE2CB7E81100E06CD4 /* MediaType.swift */; };
 		54C060CA2CB6705400B8B051 /* FavoriteMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C060C92CB6705400B8B051 /* FavoriteMedia.swift */; };
 		54C060CC2CB675C300B8B051 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C060CB2CB675C300B8B051 /* FavoriteView.swift */; };
 		54C060CE2CB676CB00B8B051 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C060CD2CB676CB00B8B051 /* FavoriteViewModel.swift */; };
@@ -44,17 +45,17 @@
 		68D9D34C2CB697A100CFD7AD /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D9D34B2CB697A100CFD7AD /* DetailViewModel.swift */; };
 		68D9D34E2CB697B000CFD7AD /* PosterImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D9D34D2CB697B000CFD7AD /* PosterImageCell.swift */; };
 		68D9D3502CB69ACB00CFD7AD /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D9D34F2CB69ACB00CFD7AD /* APIKey.swift */; };
+		68F13D1A2CB7CE1700CDC3FD /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F13D192CB7CE1700CDC3FD /* SearchView.swift */; };
+		68F13D1C2CB7D26200CDC3FD /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F13D1B2CB7D26200CDC3FD /* SearchViewModel.swift */; };
 		68F13D212CB7DDC400CDC3FD /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F13D202CB7DDC400CDC3FD /* AlertView.swift */; };
 		68F13D232CB7E16400CDC3FD /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F13D222CB7E16400CDC3FD /* AlertViewController.swift */; };
 		8E3C4E032CB67FC00021896B /* TrendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3C4E022CB67FC00021896B /* TrendingView.swift */; };
 		8E3C4E052CB680F20021896B /* TrendingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3C4E042CB680F20021896B /* TrendingViewModel.swift */; };
 		8E3C4E0A2CB7DBB60021896B /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3C4E092CB7DBB60021896B /* UIButton+Extension.swift */; };
-		68F13D1A2CB7CE1700CDC3FD /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F13D192CB7CE1700CDC3FD /* SearchView.swift */; };
-		68F13D1C2CB7D26200CDC3FD /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F13D1B2CB7D26200CDC3FD /* SearchViewModel.swift */; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		546AA1AE2CB7E81100E06CD4 /* MediaType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaType.swift; sourceTree = "<group>"; };
 		54C060C92CB6705400B8B051 /* FavoriteMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMedia.swift; sourceTree = "<group>"; };
 		54C060CB2CB675C300B8B051 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		54C060CD2CB676CB00B8B051 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
@@ -95,7 +96,6 @@
 		8E3C4E022CB67FC00021896B /* TrendingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingView.swift; sourceTree = "<group>"; };
 		8E3C4E042CB680F20021896B /* TrendingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingViewModel.swift; sourceTree = "<group>"; };
 		8E3C4E092CB7DBB60021896B /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
-
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				54EBD7522CB662CB00581021 /* Reusable.swift */,
+				546AA1AE2CB7E81100E06CD4 /* MediaType.swift */,
 				54C060CF2CB6777900B8B051 /* ViewModelProtocol.swift */,
 			);
 			path = Protocol;
@@ -383,6 +384,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				546AA1AF2CB7E81100E06CD4 /* MediaType.swift in Sources */,
 				8E3C4E0A2CB7DBB60021896B /* UIButton+Extension.swift in Sources */,
 				8E3C4E032CB67FC00021896B /* TrendingView.swift in Sources */,
 				54EBD7202CB51A9F00581021 /* SearchViewController.swift in Sources */,

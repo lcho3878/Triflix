@@ -13,8 +13,9 @@ struct MediaResult: Decodable {
     let total_pages: Int
     let total_results: Int
     
-    struct Media: Decodable {
+    struct Media: Decodable, MediaType {
         let id: Int
+        let title: String
         let poster_path: String?
         let genre_ids: [Int]
         var genres: String {
