@@ -1,5 +1,5 @@
 //
-//  SimilarCell.swift
+//  PosterImageCell.swift
 //  Triflix
 //
 //  Created by YJ on 10/9/24.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class SimilarCell: UICollectionViewCell {
+final class PosterImageCell: UICollectionViewCell {
     let posterImageView = UIImageView()
     
     override init(frame: CGRect) {

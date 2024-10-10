@@ -30,7 +30,7 @@ final class DetailViewController: UIViewController {
     
     // MARK: Functions
     private func configureCollectionView() {
-        detailView.collectionView.register(SimilarCell.self, forCellWithReuseIdentifier: SimilarCell.id)
+        detailView.collectionView.register(PosterImageCell.self, forCellWithReuseIdentifier: PosterImageCell.id)
         detailView.collectionView.showsVerticalScrollIndicator = false
         detailView.collectionView.isScrollEnabled = false
     }
@@ -62,7 +62,7 @@ final class DetailViewController: UIViewController {
         
         // similarData
         output.similarData
-            .bind(to: detailView.collectionView.rx.items(cellIdentifier: SimilarCell.id, cellType: SimilarCell.self)) { (row, element, cell) in
+            .bind(to: detailView.collectionView.rx.items(cellIdentifier: PosterImageCell.id, cellType: PosterImageCell.self)) { (row, element, cell) in
                 if let imageData = element.poster_path {
                     let imageURL = URL(string: "https://image.tmdb.org/t/p/w500\(imageData)")
                     cell.posterImageView.kf.setImage(with: imageURL, options: [.transition(.fade(1.2))])
@@ -78,7 +78,10 @@ final class DetailViewController: UIViewController {
         // realm 저장
         Observable.combineLatest(detailView.saveButton.rx.tap, output.detailData)
             .bind(with: self) { owner, value in
-                MediaRepository.shared.addMedia(media: value.1, image: owner.detailView.posterImageView.image)
+                MediaRepository.shared.addMedia(media: value.1, image: owner.detailView.posterImageView.image) 
+                // {
+                //     // 이미 저장된 데이터 입니다. 보여주기
+                // }
             }
             .disposed(by: disposeBag)
     }
