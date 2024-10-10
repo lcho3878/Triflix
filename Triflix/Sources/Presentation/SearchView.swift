@@ -6,7 +6,51 @@
 //
 
 import UIKit
+import SnapKit
 
 final class SearchView: BaseView {
+    // MARK: UI
+    let searchBar = UISearchBar()
+    private let topTitleLabel = UILabel()
+    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout())
     
+    // MARK: Functions
+    override func addSubviews() {
+        addSubviews([searchBar, topTitleLabel, collectionView])
+    }
+    
+    override func setConstraints() {
+        let safeArea = safeAreaLayoutGuide
+        
+        searchBar.snp.makeConstraints {
+            $0.top.horizontalEdges.equalTo(safeArea)
+        }
+        
+        topTitleLabel.snp.makeConstraints {
+            $0.top.equalTo(searchBar.snp.bottom).offset(5)
+            $0.horizontalEdges.equalTo(safeArea).inset(10)
+        }
+        
+        collectionView.snp.makeConstraints {
+            $0.top.equalTo(topTitleLabel.snp.bottom).offset(5)
+            $0.horizontalEdges.equalTo(safeArea)
+            $0.bottom.equalTo(safeArea)
+        }
+    }
+    
+    override func configureUI() {
+        searchBar.placeholder = "게임, 시리즈, 영화를 검색하세요.."
+        topTitleLabel.setUI(fontSize: 16, .bold)
+        topTitleLabel.text = "영화 & 시리즈"
+    }
+    
+    static func layout() -> UICollectionViewFlowLayout {
+        let layout = UICollectionViewFlowLayout()
+        let width = UIScreen.main.bounds.width - 10
+        layout.itemSize = CGSize(width: width / 3, height: 175)
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        return layout
+    }
 }
