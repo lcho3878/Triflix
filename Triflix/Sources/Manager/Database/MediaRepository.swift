@@ -30,7 +30,7 @@ extension MediaRepository {
     }
     
     func removeMedia(media: FavoriteMedia) {
-        PhotoManager.shared.removeImage(filename: "\(media.id)")
+        PhotoManager.shared.removeImage(filename: "\(media.mediaID)")
         try! realm.write {
             realm.delete(media)
         }
