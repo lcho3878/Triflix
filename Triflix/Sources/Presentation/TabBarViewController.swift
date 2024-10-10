@@ -14,7 +14,8 @@ final class TabBarViewController: UITabBarController {
     }
     
     private func configureTabBar() {
-        tabBar.backgroundColor = .white
+        tabBar.backgroundColor = .saveButton
+        tabBar.tintColor = .white
         
         let trendVC = TrendingViewController()
         let trendNav = UINavigationController(rootViewController: trendVC)
