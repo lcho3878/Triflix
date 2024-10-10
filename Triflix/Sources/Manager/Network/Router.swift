@@ -19,6 +19,8 @@ enum Router {
     case castTV(id: Int)
     case detailMovie(id: Int)
     case detailTV(id: Int)
+    case detail(id: Int, type: DetailType)
+    case cast(id: Int, type: DetailType)
 }
 
 extension Router: TargetType {
@@ -42,6 +44,8 @@ extension Router: TargetType {
         case .castTV(let id): return "/tv/\(id)/credits"
         case .detailMovie(let id): return "/movie/\(id)"
         case .detailTV(let id): return "/tv/\(id)"
+        case .detail(let id, let type): return "/\(type.rawValue)/\(id)"
+        case .cast(let id, let type): return "/\(type.rawValue)/\(id)/credits"
         }
     }
     
@@ -66,5 +70,12 @@ extension Router: TargetType {
                 URLQueryItem(name: "language", value: "ko-KR")
             ]
         }
+    }
+}
+
+extension Router {
+    enum DetailType: String {
+        case movie
+        case tv
     }
 }

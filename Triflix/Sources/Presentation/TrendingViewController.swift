@@ -113,6 +113,8 @@ extension TrendingViewController {
         
         trendingView.trendingMovieCV.rx.modelSelected(MediaResult.Media.self).bind(with: self) { owner, media in
             let detailVC = DetailViewController()
+            detailVC.viewModel.id = media.id
+            detailVC.viewModel.type = .movie
             self.navigationController?.pushViewController(detailVC, animated: true)
         }
         .disposed(by: disposeBag)
@@ -133,6 +135,8 @@ extension TrendingViewController {
         
         trendingView.trendingTVCV.rx.modelSelected(MediaResult.Media.self).bind(with: self) { owner, media in
             let detailVC = DetailViewController()
+            detailVC.viewModel.id = media.id
+            detailVC.viewModel.type = .tv
             self.navigationController?.pushViewController(detailVC, animated: true)
         }
         .disposed(by: disposeBag)

@@ -13,8 +13,8 @@ import Kingfisher
 final class DetailViewController: UIViewController {
     // MARK: Properties
     private let detailView = DetailView()
-    private let viewModel = DetailViewModel()
     private let disposeBag = DisposeBag()
+    let viewModel = DetailViewModel()
     
     // MARK: View Life Cycle
     override func loadView() {
@@ -37,8 +37,7 @@ final class DetailViewController: UIViewController {
     
     private func bind() {
         let input = DetailViewModel.Input(
-            xButtonTapped: detailView.xButton.rx.tap,
-            collectionViewModelSelected: detailView.collectionView.rx.modelSelected(MediaResult.Media.self))
+            xButtonTapped: detailView.xButton.rx.tap)
         let output = viewModel.transform(input: input)
         
         // headerViewData
@@ -75,15 +74,26 @@ final class DetailViewController: UIViewController {
             }
             .disposed(by: disposeBag)  
         
+        // modelSelected
+        detailView.collectionView.rx.modelSelected(MediaResult.Media.self)
+            .bind(with: self) { owner, result in
+                let detailVC = DetailViewController()
+                detailVC.viewModel.type = .movie
+                detailVC.viewModel.id = result.id
+                owner.navigationController?.pushViewController(detailVC, animated: true)
+            }
+            .disposed(by: disposeBag)
+        
         // realm 저장
         Observable.combineLatest(detailView.saveButton.rx.tap, output.detailData)
             .bind(with: self) { owner, value in
                 MediaRepository.shared.addMedia(media: value.1, image: owner.detailView.posterImageView.image) {
-                    print("이미 저장된 데이터 입니다")
+                    print("이미 저장된 미디어에요 :)")
                     let alert = AlertViewController()
                     alert.modalPresentationStyle = .overFullScreen
                     owner.present(alert, animated: true)
-                    
+                } success: {
+                    print("미디어를 저장했어요 :)")
                 }
             }
             .disposed(by: disposeBag)
