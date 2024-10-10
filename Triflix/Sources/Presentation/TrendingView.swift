@@ -114,18 +114,16 @@ final class TrendingView: BaseView {
             $0.centerX.equalToSuperview()
             $0.top.equalToSuperview()
             $0.width.equalTo(safeAreaLayoutGuide.snp.width).inset(16)
-//            $0.height.equalTo(mainPosterImageView.snp.width)
-            $0.height.equalTo(400) // size 조절 필요
+            $0.height.equalTo(mainPosterImageView.snp.width).multipliedBy(1.3)
         }
         
         mainPosterGenreLabel.snp.makeConstraints {
             $0.bottom.equalTo(playButton.snp.top).offset(-16)
-            $0.centerX.equalTo(mainPosterImageView.snp.centerX )
+            $0.horizontalEdges.equalTo(mainPosterImageView.snp.centerX)
         }
         
         playButton.snp.makeConstraints{
             $0.height.equalTo(32)
-            $0.width.equalTo((150))
             $0.leading.equalTo(mainPosterImageView.snp.leading).inset(16)
             $0.trailing.equalTo(mainPosterImageView.snp.centerX).inset(4)
             $0.bottom.equalTo(mainPosterImageView.snp.bottom).inset(16)
@@ -133,10 +131,8 @@ final class TrendingView: BaseView {
         
         favoriteButton.snp.makeConstraints{
             $0.height.equalTo(32)
-            $0.width.equalTo(150)
             $0.leading.equalTo(mainPosterImageView.snp.centerX).offset(4)
             $0.trailing.equalTo(mainPosterImageView.snp.trailing).inset(16)
-            $0.centerX.equalToSuperview()
             $0.bottom.equalTo(mainPosterImageView.snp.bottom).inset(16)
         }
         
