@@ -21,7 +21,6 @@ final class DetailViewModel: ViewModelProtocol {
         let casts = PublishSubject<String>()
         let creators = PublishSubject<String>()
         let similarData = PublishSubject<[MediaResult.Media]>()
-        let xButtonTapped: ControlEvent<Void>
     }
     
     struct Output {
@@ -72,14 +71,6 @@ final class DetailViewModel: ViewModelProtocol {
                 print("error!: \(error)")
             } onDisposed: { owner in
                 print("similarMovie API Disposed")
-            }
-            .disposed(by: disposeBag)
-        
-        // xButtonTap
-        input.xButtonTapped
-            .bind(with: self) { owner, _ in
-                print("xButtonTapped")
-                // 화면 dismiss
             }
             .disposed(by: disposeBag)
         
