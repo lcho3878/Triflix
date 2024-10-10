@@ -21,6 +21,7 @@ enum Router {
     case detailTV(id: Int)
     case detail(id: Int, type: DetailType)
     case cast(id: Int, type: DetailType)
+    case similar(id: Int, type: DetailType)
 }
 
 extension Router: TargetType {
@@ -46,6 +47,7 @@ extension Router: TargetType {
         case .detailTV(let id): return "/tv/\(id)"
         case .detail(let id, let type): return "/\(type.rawValue)/\(id)"
         case .cast(let id, let type): return "/\(type.rawValue)/\(id)/credits"
+        case .similar(let id, let type): return "/\(type.rawValue)/\(id)/similar"
         }
     }
     
