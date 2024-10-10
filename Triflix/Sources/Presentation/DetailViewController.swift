@@ -43,10 +43,10 @@ final class DetailViewController: UIViewController {
         // headerViewData
         output.detailData
             .bind(with: self) { owner, detailData in
-                let imageURL = URL(string: "https://image.tmdb.org/t/p/w500\(detailData.backdrop_path)")
+                let imageURL = URL(string: "https://image.tmdb.org/t/p/w500\(detailData.backdropPath)")
                 owner.detailView.posterImageView.kf.setImage(with: imageURL)
                 owner.detailView.titleLabel.text = detailData.title
-                owner.detailView.voteAverageLabel.text = String(format: "%.1f", detailData.vote_average)
+                owner.detailView.voteAverageLabel.text = String(format: "%.1f", detailData.voteAverage)
                 owner.detailView.descriptionLabel.text = detailData.overview
             }
             .disposed(by: disposeBag)
