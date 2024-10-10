@@ -11,8 +11,8 @@ import Alamofire
 enum Router {
     case trendingMovie
     case trendingTV
-    case searchMovie(query: String)
-    case searchTV(query: String)
+    case searchMovie(query: String, page: Int)
+    case searchTV(query: String, page: Int)
     case similarMovie(id: Int)
     case similarTV(id: Int)
     case castMovie(id: Int)
@@ -54,11 +54,12 @@ extension Router: TargetType {
     
     var queryItems: [URLQueryItem]? {
         switch self {
-        case .searchMovie(let query),
-                .searchTV(let query):
+        case .searchMovie(let query, let page),
+                .searchTV(let query, let page):
             return [
                 URLQueryItem(name: "query", value: query),
-                URLQueryItem(name: "language", value: "ko-KR")
+                URLQueryItem(name: "language", value: "ko-KR"),
+                URLQueryItem(name: "page", value: "\(page)")
             ]
         default :
             return  [
