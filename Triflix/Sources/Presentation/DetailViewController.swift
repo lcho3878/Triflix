@@ -41,8 +41,6 @@ final class DetailViewController: UIViewController {
             collectionViewModelSelected: detailView.collectionView.rx.modelSelected(MediaResult.Media.self))
         let output = viewModel.transform(input: input)
         
-        var media: MediaDetail?
-        
         // headerViewData
         output.detailData
             .bind(with: self) { owner, detailData in
