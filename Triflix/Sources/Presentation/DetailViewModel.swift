@@ -32,7 +32,7 @@ final class DetailViewModel: ViewModelProtocol {
     }
     
     // MARK: transform
-    func transform(input: Input) -> Output {
+    func transform(input: Input) -> Output {        
         // headerViewData
         APIManager.shared.callRequest(api: .detail(id: id, type: type), type: MediaDetail.self)
             .subscribe(with: self) { owner, result in
@@ -63,7 +63,6 @@ final class DetailViewModel: ViewModelProtocol {
                 print("similarMovie API Disposed")
             }
             .disposed(by: disposeBag)
-
         
         // similarData
         APIManager.shared.callRequest(api: .similarMovie(id: id), type: MediaResult.self)

@@ -9,6 +9,11 @@ import UIKit
 import RxCocoa
 import RxSwift
 
+enum SeriesType {
+    case movie
+    case tv
+}
+
 final class TrendingViewController: BaseViewController {
     
     private let trendingView = TrendingView()
@@ -50,8 +55,6 @@ extension TrendingViewController{
         trendingView.trendingTVCV.register(PosterImageCell.self, forCellWithReuseIdentifier: PosterImageCell.id)
         trendingView.trendingTVCV.showsHorizontalScrollIndicator = false
     }
-    
-   
 }
 
 // MARK:  ViewModel Bind

@@ -51,8 +51,5 @@ final class AlertView: BaseView {
         okButton.setTitleColor(.white, for: .normal)
         okButton.backgroundColor = .alertButton
         okButton.layer.cornerRadius = 7
-        
-        // 임시
-        titleLabel.text = "이미 저장된 어쩌고~"
     }
 }
