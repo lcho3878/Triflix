@@ -119,6 +119,7 @@ final class DetailView: BaseView {
     }
     
     override func configureUI() {
+        backgroundColor = .systemBackground
         collectionView.backgroundColor = .clear
         
         posterImageView.contentMode = .scaleToFill
@@ -136,7 +137,6 @@ final class DetailView: BaseView {
         descriptionLabel.setUI(numOfLines: 0, fontSize: 15, .regular)
         castLabel.setUI(.lightGray, numOfLines: 2, fontSize: 14, .semibold)
         similarTextLabel.setUI(fontSize: 16, .bold)
-        
         similarTextLabel.text = "비슷한 콘텐츠"
     }
     
