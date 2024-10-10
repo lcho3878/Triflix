@@ -12,6 +12,8 @@ import RxCocoa
 final class DetailViewModel: ViewModelProtocol {
     // MARK: Properties
     var disposeBag = DisposeBag()
+    var id: Int = 0
+    var type: Router.DetailType = .movie
     
     // MARK: Input / Output
     struct Input {
@@ -20,7 +22,6 @@ final class DetailViewModel: ViewModelProtocol {
         let creators = PublishSubject<String>()
         let similarData = PublishSubject<[MediaResult.Media]>()
         let xButtonTapped: ControlEvent<Void>
-        let collectionViewModelSelected: ControlEvent<MediaResult.Media>
     }
     
     struct Output {
@@ -33,7 +34,7 @@ final class DetailViewModel: ViewModelProtocol {
     // MARK: transform
     func transform(input: Input) -> Output {
         // headerViewData
-        APIManager.shared.callRequest(api: .detailMovie(id: 889737), type: MediaDetail.self)
+        APIManager.shared.callRequest(api: .detail(id: id, type: type), type: MediaDetail.self)
             .subscribe(with: self) { owner, result in
                 input.detailData.onNext(result)
             } onFailure: { owner, error in
@@ -44,7 +45,7 @@ final class DetailViewModel: ViewModelProtocol {
             .disposed(by: disposeBag)
         
         // castData
-        APIManager.shared.callRequest(api: .castMovie(id: 889737), type: CastResult.self)
+        APIManager.shared.callRequest(api: .cast(id: id, type: type), type: CastResult.self)
             .subscribe(with: self) { owner, result in
                 // 출연
                 let casts = result.actor
@@ -65,7 +66,7 @@ final class DetailViewModel: ViewModelProtocol {
 
         
         // similarData
-        APIManager.shared.callRequest(api: .similarMovie(id: 1087822), type: MediaResult.self)
+        APIManager.shared.callRequest(api: .similarMovie(id: id), type: MediaResult.self)
             .subscribe(with: self) { owner, result in
                 input.similarData.onNext(result.results)
             } onFailure: { owner, error in
@@ -80,14 +81,6 @@ final class DetailViewModel: ViewModelProtocol {
             .bind(with: self) { owner, _ in
                 print("xButtonTapped")
                 // 화면 dismiss
-            }
-            .disposed(by: disposeBag)
-        
-        // collectionViewModelSelected
-        input.collectionViewModelSelected
-            .bind(with: self) { owner, result in
-                print(">>> \(result.id)")
-                // 해당 아이디로 네트워크 재통신 후, 새로운 DetailView로 push
             }
             .disposed(by: disposeBag)
         
