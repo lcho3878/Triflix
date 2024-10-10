@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MediaDetail: Decodable {
+struct MediaDetail: Decodable, MediaType {
     let id: Int
     let backdrop_path: String
     let poster_path: String
