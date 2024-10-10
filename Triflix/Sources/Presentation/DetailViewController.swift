@@ -36,9 +36,14 @@ final class DetailViewController: UIViewController {
     }
     
     private func bind() {
-        let input = DetailViewModel.Input()
+        let input = DetailViewModel.Input(
+            xButtonTapped: detailView.xButton.rx.tap,
+            collectionViewModelSelected: detailView.collectionView.rx.modelSelected(MediaResult.Media.self))
         let output = viewModel.transform(input: input)
         
+        var media: MediaDetail?
+        
+        // headerViewData
         output.detailData
             .bind(with: self) { owner, detailData in
                 let imageURL = URL(string: "https://image.tmdb.org/t/p/w500\(detailData.backdrop_path)")
@@ -49,6 +54,15 @@ final class DetailViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
+        // casts & creators
+        Observable.combineLatest(output.casts, output.creators)
+            .bind(with: self) { owner, tuple in
+                let (casts, creators) = tuple
+                owner.detailView.castLabel.text = "출연: \(casts)\n크리에이터: \(creators)"
+            }
+            .disposed(by: disposeBag)
+        
+        // similarData
         output.similarData
             .bind(to: detailView.collectionView.rx.items(cellIdentifier: SimilarCell.id, cellType: SimilarCell.self)) { (row, element, cell) in
                 if let imageData = element.poster_path {
@@ -61,11 +75,12 @@ final class DetailViewController: UIViewController {
                     cell.posterImageView.contentMode = .scaleAspectFit
                 }
             }
-            .disposed(by: disposeBag)
+            .disposed(by: disposeBag)  
         
-        output.similarData
-            .bind { _ in
-                print("success")
+        // realm 저장
+        Observable.combineLatest(detailView.saveButton.rx.tap, output.detailData)
+            .bind(with: self) { owner, value in
+                MediaRepository.shared.addMedia(media: value.1, image: owner.detailView.posterImageView.image)
             }
             .disposed(by: disposeBag)
     }
