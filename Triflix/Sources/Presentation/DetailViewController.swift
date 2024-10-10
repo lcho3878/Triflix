@@ -24,6 +24,7 @@ final class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureNavigation()
         configureCollectionView()
         bind()
     }
@@ -35,9 +36,13 @@ final class DetailViewController: UIViewController {
         detailView.collectionView.isScrollEnabled = false
     }
     
+    private func configureNavigation() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        navigationItem.backBarButtonItem?.tintColor = .white
+    }
+    
     private func bind() {
-        let input = DetailViewModel.Input(
-            xButtonTapped: detailView.xButton.rx.tap)
+        let input = DetailViewModel.Input()
         let output = viewModel.transform(input: input)
         
         // headerViewData
@@ -78,9 +83,16 @@ final class DetailViewController: UIViewController {
         detailView.collectionView.rx.modelSelected(MediaResult.Media.self)
             .bind(with: self) { owner, result in
                 let detailVC = DetailViewController()
-                detailVC.viewModel.type = .movie
+                detailVC.viewModel.type = owner.viewModel.type
                 detailVC.viewModel.id = result.id
                 owner.navigationController?.pushViewController(detailVC, animated: true)
+            }
+            .disposed(by: disposeBag)
+        
+        // xButton
+        detailView.xButton.rx.tap
+            .bind(with: self) { owner, _ in
+                owner.dismiss(animated: true)
             }
             .disposed(by: disposeBag)
         

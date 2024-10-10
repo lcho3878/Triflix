@@ -40,7 +40,7 @@ final class TrendingViewController: BaseViewController {
 // MARK:  뷰컨 구성
 extension TrendingViewController{
     private func configureVC() {
-        // Navigation Bar 구성
+        // Navigation Bar 구성        
         let profileBtn = UIButton(type: .custom)
         profileBtn.topProfileUI(imageName: "logo")
               let menuBarItem = UIBarButtonItem(customView: profileBtn)
@@ -116,9 +116,11 @@ extension TrendingViewController {
         
         trendingView.trendingMovieCV.rx.modelSelected(MediaResult.Media.self).bind(with: self) { owner, media in
             let detailVC = DetailViewController()
+            let detailNav = UINavigationController(rootViewController: detailVC)
             detailVC.viewModel.id = media.id
             detailVC.viewModel.type = .movie
-            self.navigationController?.pushViewController(detailVC, animated: true)
+            detailNav.modalPresentationStyle = .fullScreen
+            owner.present(detailNav, animated: true)
         }
         .disposed(by: disposeBag)
         
@@ -138,9 +140,11 @@ extension TrendingViewController {
         
         trendingView.trendingTVCV.rx.modelSelected(MediaResult.Media.self).bind(with: self) { owner, media in
             let detailVC = DetailViewController()
+            let detailNav = UINavigationController(rootViewController: detailVC)
             detailVC.viewModel.id = media.id
             detailVC.viewModel.type = .tv
-            self.navigationController?.pushViewController(detailVC, animated: true)
+            detailNav.modalPresentationStyle = .fullScreen
+            owner.present(detailNav, animated: true)
         }
         .disposed(by: disposeBag)
     }
