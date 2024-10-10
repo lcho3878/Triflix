@@ -30,23 +30,23 @@ final class TrendingViewModel: ViewModelProtocol {
         input.viewDidLoadTrigger.bind(with: self) { owner, _ in
             APIManager.shared.callRequest(api: .trendingMovie, type: MediaResult.self).subscribe(with: self) { owner, result in
                 movieOutput.onNext(result.results)
-                dump(result)
             } onFailure: { owner, error in
                 print("error!: \(error)")
             } onDisposed: { owner in
                 print("similarMovie API Disposed")
             }
+            .disposed(by: owner.disposeBag)
         }.disposed(by: disposeBag)
         
         input.viewDidLoadTrigger.bind(with: self) { owner, _ in
             APIManager.shared.callRequest(api: .trendingTV, type: MediaResult.self).subscribe(with: self) { owner, result in
                 tvOutput.onNext(result.results)
-                dump(result)
             } onFailure: { owner, error in
-                print("error!: \(error)")
+                print(">>> error!: \(error)")
             } onDisposed: { owner in
                 print("similarMovie API Disposed")
             }
+            .disposed(by: owner.disposeBag)
         }.disposed(by: disposeBag)
         
         return Output(movieOutput: movieOutput, TVOutput: tvOutput)
