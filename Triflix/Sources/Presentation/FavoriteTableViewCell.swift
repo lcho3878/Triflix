@@ -72,5 +72,6 @@ extension FavoriteTableViewCell {
     
     func configureData(_ data: FavoriteMedia) {
         titleLabel.text = data.title
+        posterImageView.image = PhotoManager.shared.loadImage(filename: "\(data.mediaID)")
     }
 }

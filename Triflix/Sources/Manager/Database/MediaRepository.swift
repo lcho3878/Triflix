@@ -21,7 +21,11 @@ extension MediaRepository {
         print(realm.configuration.fileURL!)
     }
     
-    func addMedia(media: MediaDetail, image: UIImage?) {
+    func addMedia(media: MediaDetail, image: UIImage?, handler: (() -> Void)? = nil) {
+        guard isNotExist(media) else {
+            handler?()
+            return
+        }
         PhotoManager.shared.saveImage(image: image, filename: "\(media.id)")
         let object = FavoriteMedia(mediaID: media.id, title: media.title, posterPath: media.poster_path)
         try! realm.write {
@@ -30,7 +34,7 @@ extension MediaRepository {
     }
     
     func removeMedia(media: FavoriteMedia) {
-        PhotoManager.shared.removeImage(filename: "\(media.id)")
+        PhotoManager.shared.removeImage(filename: "\(media.mediaID)")
         try! realm.write {
             realm.delete(media)
         }
@@ -38,5 +42,9 @@ extension MediaRepository {
     
     func readAllMedia() -> Results<FavoriteMedia> {
         return realm.objects(FavoriteMedia.self)
+    }
+    
+    func isNotExist(_ media: MediaDetail) -> Bool {
+        return realm.objects(FavoriteMedia.self).filter { $0.mediaID == media.id }.isEmpty
     }
 }
