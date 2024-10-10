@@ -78,10 +78,13 @@ final class DetailViewController: UIViewController {
         // realm 저장
         Observable.combineLatest(detailView.saveButton.rx.tap, output.detailData)
             .bind(with: self) { owner, value in
-                MediaRepository.shared.addMedia(media: value.1, image: owner.detailView.posterImageView.image) 
-                // {
-                //     // 이미 저장된 데이터 입니다. 보여주기
-                // }
+                MediaRepository.shared.addMedia(media: value.1, image: owner.detailView.posterImageView.image) {
+                    print("이미 저장된 데이터 입니다")
+                    let alert = AlertViewController()
+                    alert.modalPresentationStyle = .overFullScreen
+                    owner.present(alert, animated: true)
+                    
+                }
             }
             .disposed(by: disposeBag)
     }
