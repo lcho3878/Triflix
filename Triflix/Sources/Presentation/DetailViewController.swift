@@ -88,12 +88,15 @@ final class DetailViewController: UIViewController {
         Observable.combineLatest(detailView.saveButton.rx.tap, output.detailData)
             .bind(with: self) { owner, value in
                 MediaRepository.shared.addMedia(media: value.1, image: owner.detailView.posterImageView.image) {
-                    print("이미 저장된 미디어에요 :)")
                     let alert = AlertViewController()
+                    alert.alertView.titleLabel.text = "이미 저장된 미디어에요 :)"
                     alert.modalPresentationStyle = .overFullScreen
                     owner.present(alert, animated: true)
                 } success: {
-                    print("미디어를 저장했어요 :)")
+                    let alert = AlertViewController()
+                    alert.alertView.titleLabel.text = "미디어를 저장했어요 :)"
+                    alert.modalPresentationStyle = .overFullScreen
+                    owner.present(alert, animated: true)
                 }
             }
             .disposed(by: disposeBag)
