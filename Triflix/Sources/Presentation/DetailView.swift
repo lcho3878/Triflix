@@ -138,9 +138,6 @@ final class DetailView: BaseView {
         similarTextLabel.setUI(fontSize: 16, .bold)
         
         similarTextLabel.text = "비슷한 콘텐츠"
-        
-        // 임시
-        castLabel.text = "출연: 톰 홀랜드 마이클 키튼 로버트 다우니 주니어\n크리에이터: Kirk R. Thatcher"
     }
     
     static func layout() -> UICollectionViewFlowLayout {

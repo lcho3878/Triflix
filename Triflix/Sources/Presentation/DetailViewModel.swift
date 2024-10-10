@@ -12,6 +12,8 @@ import RxCocoa
 final class DetailViewModel: ViewModelProtocol {
     // MARK: Properties
     var disposeBag = DisposeBag()
+    var seriesType: SeriesType?
+    var id: Int = 0
     
     // MARK: Input / Output
     struct Input {
@@ -31,9 +33,9 @@ final class DetailViewModel: ViewModelProtocol {
     }
     
     // MARK: transform
-    func transform(input: Input) -> Output {
+    func transform(input: Input) -> Output {        
         // headerViewData
-        APIManager.shared.callRequest(api: .detailMovie(id: 889737), type: MediaDetail.self)
+        APIManager.shared.callRequest(api: .detailMovie(id: id), type: MediaDetail.self)
             .subscribe(with: self) { owner, result in
                 input.detailData.onNext(result)
             } onFailure: { owner, error in
@@ -44,7 +46,7 @@ final class DetailViewModel: ViewModelProtocol {
             .disposed(by: disposeBag)
         
         // castData
-        APIManager.shared.callRequest(api: .castMovie(id: 889737), type: CastResult.self)
+        APIManager.shared.callRequest(api: .castMovie(id: id), type: CastResult.self)
             .subscribe(with: self) { owner, result in
                 // 출연
                 let casts = result.actor
@@ -62,10 +64,9 @@ final class DetailViewModel: ViewModelProtocol {
                 print("similarMovie API Disposed")
             }
             .disposed(by: disposeBag)
-
         
         // similarData
-        APIManager.shared.callRequest(api: .similarMovie(id: 1087822), type: MediaResult.self)
+        APIManager.shared.callRequest(api: .similarMovie(id: id), type: MediaResult.self)
             .subscribe(with: self) { owner, result in
                 input.similarData.onNext(result.results)
             } onFailure: { owner, error in

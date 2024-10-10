@@ -13,7 +13,7 @@ import Kingfisher
 final class DetailViewController: UIViewController {
     // MARK: Properties
     private let detailView = DetailView()
-    private let viewModel = DetailViewModel()
+    let viewModel = DetailViewModel()
     private let disposeBag = DisposeBag()
     
     // MARK: View Life Cycle
