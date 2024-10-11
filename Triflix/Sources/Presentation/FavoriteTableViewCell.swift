@@ -46,8 +46,8 @@ final class FavoriteTableViewCell: UITableViewCell {
 extension FavoriteTableViewCell {
     private func addSubviews() {
         contentView.addSubview(posterImageView)
-        contentView.addSubview(titleLabel)
         contentView.addSubview(playButton)
+        contentView.addSubview(titleLabel)
     }
     
     private func setConstraints() {
@@ -57,16 +57,17 @@ extension FavoriteTableViewCell {
             $0.width.equalTo(150)
         }
         
-        titleLabel.snp.makeConstraints {
-            $0.leading.equalTo(posterImageView.snp.trailing).offset(8)
-            $0.centerY.equalTo(safeAreaLayoutGuide)
-        }
-        
         playButton.snp.makeConstraints {
             $0.verticalEdges.equalTo(safeAreaLayoutGuide).inset(24)
             $0.width.equalTo(playButton.snp.height)
             $0.centerY.equalTo(safeAreaLayoutGuide)
             $0.trailing.equalTo(safeAreaLayoutGuide).inset(8)
+        }
+        
+        titleLabel.snp.makeConstraints {
+            $0.leading.equalTo(posterImageView.snp.trailing).offset(8)
+            $0.trailing.equalTo(playButton.snp.leading).offset(8)
+            $0.centerY.equalTo(safeAreaLayoutGuide)
         }
     }
     
