@@ -119,12 +119,7 @@ extension TrendingViewController {
             .disposed(by: disposeBag)
         
         trendingView.trendingMovieCV.rx.modelSelected(MediaResult.Media.self).bind(with: self) { owner, media in
-            let detailVC = DetailViewController()
-            let detailNav = UINavigationController(rootViewController: detailVC)
-            detailVC.viewModel.id = media.id
-            detailVC.viewModel.type = .movie
-            detailNav.modalPresentationStyle = .fullScreen
-            owner.present(detailNav, animated: true)
+            owner.presentDetailViewController(media: media, type: .movie, isPresent: true)
         }
         .disposed(by: disposeBag)
         
@@ -143,12 +138,7 @@ extension TrendingViewController {
             .disposed(by: disposeBag)
         
         trendingView.trendingTVCV.rx.modelSelected(MediaResult.Media.self).bind(with: self) { owner, media in
-            let detailVC = DetailViewController()
-            let detailNav = UINavigationController(rootViewController: detailVC)
-            detailVC.viewModel.id = media.id
-            detailVC.viewModel.type = .tv
-            detailNav.modalPresentationStyle = .fullScreen
-            owner.present(detailNav, animated: true)
+            owner.presentDetailViewController(media: media, type: .tv, isPresent: true)
         }
         .disposed(by: disposeBag)
         
