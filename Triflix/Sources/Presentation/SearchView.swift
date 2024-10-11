@@ -12,7 +12,7 @@ final class SearchView: BaseView {
     // MARK: UI
     let searchBar = UISearchBar()
     private let topTitleLabel = UILabel()
-    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout())
+    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionView.layout())
     
     // MARK: Functions
     override func addSubviews() {
@@ -42,15 +42,5 @@ final class SearchView: BaseView {
         searchBar.placeholder = "게임, 시리즈, 영화를 검색하세요.."
         topTitleLabel.setUI(fontSize: 16, .bold)
         topTitleLabel.text = "영화 & 시리즈"
-    }
-    
-    static func layout() -> UICollectionViewFlowLayout {
-        let layout = UICollectionViewFlowLayout()
-        let width = UIScreen.main.bounds.width - 10
-        layout.itemSize = CGSize(width: width / 3, height: 175)
-        layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 0
-        layout.minimumInteritemSpacing = 0
-        return layout
     }
 }
