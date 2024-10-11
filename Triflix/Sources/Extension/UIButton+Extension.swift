@@ -9,6 +9,17 @@ import UIKit
 
 extension UIButton {
     func topProfileUI(imageName: String) {
-            setImage(UIImage(named: imageName), for: .normal)
+        setImage(UIImage(named: imageName), for: .normal)
+    }
+    
+    func setConfigUI(bgColor: UIColor, tintColor: UIColor, title: String, image: String) {
+        backgroundColor = bgColor
+        configurationUpdateHandler = { btn in
+            btn.configuration?.attributedTitle = AttributedString(title, attributes: AttributeContainer([.font: UIFont.systemFont(ofSize: 15)]))
+            btn.tintColor = tintColor
+            btn.configuration?.image = UIImage(systemName: image)?.applyingSymbolConfiguration(.init(pointSize: 13))
+            btn.configuration?.imagePadding = 10
         }
+        layer.cornerRadius = 5
+    }
 }
