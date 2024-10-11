@@ -8,6 +8,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import Kingfisher
 
 enum SeriesType {
     case movie
@@ -15,20 +16,14 @@ enum SeriesType {
 }
 
 final class TrendingViewController: BaseViewController {
-    
     private let trendingView = TrendingView()
     private let viewModel = TrendingViewModel()
     private let disposeBag = DisposeBag()
-   
+    
     private let viewDidLoadTrigger = PublishSubject<Void>()
     
     override func loadView() {
         view = trendingView
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-      
     }
     
     override func viewDidLoad() {
@@ -37,18 +32,19 @@ final class TrendingViewController: BaseViewController {
         bind()
     }
 }
-// MARK:  뷰컨 구성
+
+// MARK: 뷰컨 구성
 extension TrendingViewController{
     private func configureVC() {
-        // Navigation Bar 구성        
+        // Navigation Bar 구성
         let profileBtn = UIButton(type: .custom)
         profileBtn.topProfileUI(imageName: "logo")
-              let menuBarItem = UIBarButtonItem(customView: profileBtn)
-              let currWidth = menuBarItem.customView?.widthAnchor.constraint(equalToConstant: 40)
-              let currHeight = menuBarItem.customView?.heightAnchor.constraint(equalToConstant: 40)
-              currWidth?.isActive = true
-              currHeight?.isActive = true
-              navigationItem.leftBarButtonItem = menuBarItem
+        let menuBarItem = UIBarButtonItem(customView: profileBtn)
+        let currWidth = menuBarItem.customView?.widthAnchor.constraint(equalToConstant: 40)
+        let currHeight = menuBarItem.customView?.heightAnchor.constraint(equalToConstant: 40)
+        currWidth?.isActive = true
+        currHeight?.isActive = true
+        navigationItem.leftBarButtonItem = menuBarItem
         navigationItem.rightBarButtonItems = [trendingView.magnifyingglassItem, trendingView.sparkleItem]
         trendingView.trendingMovieCV.register(PosterImageCell.self, forCellWithReuseIdentifier: PosterImageCell.id)
         trendingView.trendingMovieCV.showsHorizontalScrollIndicator = false
@@ -57,7 +53,7 @@ extension TrendingViewController{
     }
 }
 
-// MARK:  ViewModel Bind
+// MARK: ViewModel Bind
 extension TrendingViewController {
     private func bind() {
         let input = TrendingViewModel.Input(
@@ -75,7 +71,7 @@ extension TrendingViewController {
         trendingView.playButton.rx.tap.bind {
             print("재생버튼 탭")
         }.disposed(by: disposeBag)
-    
+        
         // realm 저장
         Observable.combineLatest(trendingView.favoriteButton.rx.tap, output.movieOutput)
             .bind(with: self) { owner, value in
@@ -94,7 +90,6 @@ extension TrendingViewController {
             }
             .disposed(by: disposeBag)
         
-        
         output.movieOutput.bind(with: self) { owner, list in
             guard let url = list.first?.poster_path else { return }
             guard let genre = list.first?.genres else { return }
@@ -108,7 +103,7 @@ extension TrendingViewController {
             .bind(to: trendingView.trendingMovieCV.rx.items(cellIdentifier: PosterImageCell.id, cellType: PosterImageCell.self)) { (row, element, cell) in
                 if let imageData = element.poster_path {
                     let imageURL = URL(string: "https://image.tmdb.org/t/p/w500\(imageData)")
-                    cell.posterImageView.kf.setImage(with: imageURL, options: [.transition(.fade(1.2))])
+                    cell.posterImageView.kf.setImage(with: imageURL, options: [.transition(.fade(0.7))])
                     cell.posterImageView.kf.indicatorType = .activity
                 } else {
                     cell.posterImageView.image = UIImage(systemName: "movieclapper")
@@ -127,7 +122,7 @@ extension TrendingViewController {
             .bind(to: trendingView.trendingTVCV.rx.items(cellIdentifier: PosterImageCell.id, cellType: PosterImageCell.self)) { (row, element, cell) in
                 if let imageData = element.poster_path {
                     let imageURL = URL(string: "https://image.tmdb.org/t/p/w500\(imageData)")
-                    cell.posterImageView.kf.setImage(with: imageURL, options: [.transition(.fade(1.2))])
+                    cell.posterImageView.kf.setImage(with: imageURL, options: [.transition(.fade(0.7))])
                     cell.posterImageView.kf.indicatorType = .activity
                 } else {
                     cell.posterImageView.image = UIImage(systemName: "movieclapper")
@@ -145,4 +140,3 @@ extension TrendingViewController {
         viewDidLoadTrigger.onNext(())
     }
 }
-

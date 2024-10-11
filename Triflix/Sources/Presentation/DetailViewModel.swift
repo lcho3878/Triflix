@@ -38,7 +38,7 @@ extension DetailViewModel {
             } onFailure: { owner, error in
                 print("error!: \(error)")
             } onDisposed: { owner in
-                print("similarMovie API Disposed")
+                print("detail API Disposed")
             }
             .disposed(by: disposeBag)
         
@@ -58,7 +58,7 @@ extension DetailViewModel {
             } onFailure: { owner, error in
                 print("error!: \(error)")
             } onDisposed: { owner in
-                print("similarMovie API Disposed")
+                print("cast API Disposed")
             }
             .disposed(by: disposeBag)
         

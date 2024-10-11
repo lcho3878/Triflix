@@ -33,7 +33,7 @@ final class TrendingViewModel: ViewModelProtocol {
             } onFailure: { owner, error in
                 print("error!: \(error)")
             } onDisposed: { owner in
-                print("similarMovie API Disposed")
+                print("trendingMovie API Disposed")
             }
             .disposed(by: owner.disposeBag)
         }.disposed(by: disposeBag)
@@ -44,7 +44,7 @@ final class TrendingViewModel: ViewModelProtocol {
             } onFailure: { owner, error in
                 print(">>> error!: \(error)")
             } onDisposed: { owner in
-                print("similarMovie API Disposed")
+                print("trendingTV API Disposed")
             }
             .disposed(by: owner.disposeBag)
         }.disposed(by: disposeBag)
