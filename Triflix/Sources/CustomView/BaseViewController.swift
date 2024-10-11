@@ -8,12 +8,10 @@
 import Foundation
 import UIKit
 
-class BaseViewController: UIViewController {
-//    Router.DetailType
-}
+class BaseViewController: UIViewController {}
 
 extension BaseViewController {
-    func presentDetailViewController (media: MediaResult.Media, type: Router.DetailType, isPresent: Bool) {
+    func presentDetailViewController(media: MediaResult.Media, type: Router.DetailType, isPresent: Bool) {
         let detailVC = DetailViewController()
         detailVC.viewModel.id = media.id
         detailVC.viewModel.type = type
