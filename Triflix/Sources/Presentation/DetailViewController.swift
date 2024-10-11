@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 import Kingfisher
 
-final class DetailViewController: UIViewController {
+final class DetailViewController: BaseViewController {
     // MARK: Properties
     private let detailView = DetailView()
     private let disposeBag = DisposeBag()
