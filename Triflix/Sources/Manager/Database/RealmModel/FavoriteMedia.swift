@@ -14,6 +14,14 @@ final class FavoriteMedia: Object {
     @Persisted var title: String
     @Persisted var posterPath: String
     
+    var type: Router.DetailType {
+        switch posterPath {
+        case "tv": .tv
+        case "movie": .movie
+        default : .movie
+        }
+    }
+    
     convenience init(mediaID: Int, title: String, posterPath: String) {
         self.init()
         self.mediaID = mediaID
