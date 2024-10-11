@@ -140,34 +140,3 @@ final class DetailView: BaseView {
         similarTextLabel.text = "비슷한 콘텐츠"
     }
 }
-
-// MARK: UIView+
-extension UIView {
-    func addSubviews(_ views: [UIView]) {
-        views.forEach { self.addSubview($0) }
-    }
-}
-
-// MARK: UILabel+
-extension UILabel {
-    func setUI(_ txtColor: UIColor = .white, _ txtAlignment: NSTextAlignment = .left, numOfLines: Int = 1, fontSize: CGFloat, _ fontWeight: UIFont.Weight = .regular) {
-        textColor = txtColor
-        textAlignment = txtAlignment
-        numberOfLines = numOfLines
-        font = .systemFont(ofSize: fontSize, weight: fontWeight)
-    }
-}
-
-// MARK: UIButton+
-extension UIButton {
-    func setConfigUI(bgColor: UIColor, tintColor: UIColor, title: String, image: String) {
-        backgroundColor = bgColor
-        configurationUpdateHandler = { btn in
-            btn.configuration?.attributedTitle = AttributedString(title, attributes: AttributeContainer([.font: UIFont.systemFont(ofSize: 15)]))
-            btn.tintColor = tintColor
-            btn.configuration?.image = UIImage(systemName: image)?.applyingSymbolConfiguration(.init(pointSize: 13))
-            btn.configuration?.imagePadding = 10
-        }
-        layer.cornerRadius = 5
-    }
-}
