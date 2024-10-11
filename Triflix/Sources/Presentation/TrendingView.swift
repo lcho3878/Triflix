@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 final class TrendingView: BaseView {
-    
     let sparkleItem = UIBarButtonItem()
     let magnifyingglassItem = UIBarButtonItem()
     private let scrollView = {
@@ -159,7 +158,4 @@ final class TrendingView: BaseView {
             $0.bottom.equalTo(myView).inset(16) // 아래 여백 필요시 조절 및 제거
         }
     }
-}
-// 필요 없으면 제거 필요시 사용 후 주석 수정
-extension TrendingView {
 }

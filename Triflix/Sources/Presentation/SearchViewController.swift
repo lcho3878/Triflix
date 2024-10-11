@@ -53,7 +53,7 @@ extension SearchViewController {
             .bind(to: searchView.collectionView.rx.items(cellIdentifier: PosterImageCell.id, cellType: PosterImageCell.self)) { (row, element, cell) in
                 if let imageData = element.poster_path {
                     let imageURL = URL(string: "https://image.tmdb.org/t/p/w500\(imageData)")
-                    cell.posterImageView.kf.setImage(with: imageURL, options: [.transition(.fade(1.2))])
+                    cell.posterImageView.kf.setImage(with: imageURL, options: [.transition(.fade(0.7))])
                     cell.posterImageView.kf.indicatorType = .activity
                 } else {
                     cell.posterImageView.image = UIImage(systemName: "movieclapper")
