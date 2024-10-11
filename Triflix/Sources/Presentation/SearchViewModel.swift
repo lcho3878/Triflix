@@ -12,11 +12,11 @@ import RxCocoa
 final class SearchViewModel: ViewModelProtocol {
     typealias Media = MediaResult.Media
     
-    var disposeBag = DisposeBag()
-    
     private var searchData = [Media]()
     private var query = ""
     private var pages = 1
+    
+    let disposeBag = DisposeBag()
     
     struct Input {
         let searchData = PublishSubject<[Media]>()
@@ -28,7 +28,9 @@ final class SearchViewModel: ViewModelProtocol {
     struct Output {
         let searchData: PublishSubject<[Media]>
     }
-    
+}
+
+extension SearchViewModel {
     func transform(input: Input) -> Output {
         Observable
             .combineLatest(input.searchButtonClicked, input.searchQuery)

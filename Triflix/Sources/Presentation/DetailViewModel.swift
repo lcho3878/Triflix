@@ -10,12 +10,10 @@ import RxSwift
 import RxCocoa
 
 final class DetailViewModel: ViewModelProtocol {
-    // MARK: Properties
-    var disposeBag = DisposeBag()
+    let disposeBag = DisposeBag()
     var id: Int = 0
     var type: Router.DetailType = .movie
     
-    // MARK: Input / Output
     struct Input {
         let detailData = PublishSubject<MediaDetail>()
         let casts = PublishSubject<String>()
@@ -29,9 +27,10 @@ final class DetailViewModel: ViewModelProtocol {
         let creators: PublishSubject<String>
         let similarData: PublishSubject<[MediaResult.Media]>
     }
-    
-    // MARK: transform
-    func transform(input: Input) -> Output {        
+}
+
+extension DetailViewModel {
+    func transform(input: Input) -> Output {
         // headerViewData
         APIManager.shared.callRequest(api: .detail(id: id, type: type), type: MediaDetail.self)
             .subscribe(with: self) { owner, result in
