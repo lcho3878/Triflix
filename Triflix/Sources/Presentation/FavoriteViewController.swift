@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class FavoriteViewController: UIViewController {
+class FavoriteViewController: BaseViewController {
     private let favoriteView = FavoriteView()
     
     private let viewModel = FavoriteViewModel()
@@ -52,6 +52,12 @@ extension FavoriteViewController {
         
         favoriteView.tableView.rx
             .setDelegate(self)
+            .disposed(by: disposeBag)
+        
+        favoriteView.tableView.rx.modelSelected(FavoriteMedia.self)
+            .bind(with: self) { owner, item in
+                owner.presentDetailViewController(media: item)
+            }
             .disposed(by: disposeBag)
         
         output.mediaOutput

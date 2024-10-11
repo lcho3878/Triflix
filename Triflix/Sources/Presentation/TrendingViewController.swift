@@ -80,7 +80,7 @@ extension TrendingViewController {
         Observable.combineLatest(trendingView.favoriteButton.rx.tap, output.movieOutput)
             .bind(with: self) { owner, value in
                 guard let media = value.1.first else { return }
-                MediaRepository.shared.addMedia(media: media, image: owner.trendingView.mainPosterImageView.image) {
+                MediaRepository.shared.addMedia(media: media, type: .movie, image: owner.trendingView.mainPosterImageView.image) {
                     let alert = AlertViewController()
                     alert.alertView.titleLabel.text = "이미 저장된 미디어에요 :)"
                     alert.modalPresentationStyle = .overFullScreen

@@ -104,7 +104,7 @@ extension DetailViewController {
         // realm 저장
         Observable.combineLatest(detailView.saveButton.rx.tap, output.detailData)
             .bind(with: self) { owner, value in
-                MediaRepository.shared.addMedia(media: value.1, image: owner.detailView.posterImageView.image) {
+                MediaRepository.shared.addMedia(media: value.1, type: owner.viewModel.type, image: owner.detailView.posterImageView.image) {
                     let alert = AlertViewController()
                     alert.alertView.titleLabel.text = "이미 저장된 미디어에요 :)"
                     alert.modalPresentationStyle = .overFullScreen

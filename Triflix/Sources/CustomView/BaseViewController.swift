@@ -24,4 +24,13 @@ extension BaseViewController {
             navigationController?.pushViewController(detailVC, animated: true)
         }
     }
+    
+    func presentDetailViewController(media: FavoriteMedia) {
+        let detailVC = DetailViewController()
+        detailVC.viewModel.id = media.mediaID
+        detailVC.viewModel.type = media.type
+        let detailNav = UINavigationController(rootViewController: detailVC)
+        detailNav.modalPresentationStyle = .fullScreen
+        present(detailNav, animated: true)
+    }
 }

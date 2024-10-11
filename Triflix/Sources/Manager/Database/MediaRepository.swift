@@ -21,13 +21,13 @@ extension MediaRepository {
         print(realm.configuration.fileURL!)
     }
     
-    func addMedia(media: MediaType, image: UIImage?, fail: () -> Void, success: () -> Void) {
+    func addMedia(media: MediaType, type: Router.DetailType, image: UIImage?, fail: () -> Void, success: () -> Void) {
         guard isNotExist(media) else {
             fail()
             return
         }
         PhotoManager.shared.saveImage(image: image, filename: "\(media.id)")
-        let object = FavoriteMedia(mediaID: media.id, title: media.title, posterPath: "")
+        let object = FavoriteMedia(mediaID: media.id, title: media.title, posterPath: type.rawValue)
         try! realm.write {
             realm.add(object)
         }
