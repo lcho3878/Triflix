@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 import Kingfisher
 
-final class SearchViewController: UIViewController {
+final class SearchViewController: BaseViewController {
     // MARK: Properties
     private let searchView = SearchView()
     private let viewModel = SearchViewModel()
@@ -66,6 +66,12 @@ extension SearchViewController {
         searchView.collectionView.rx.prefetchItems
             .bind(with: self) { owner, indexPaths in
                 indexPathInput.onNext(indexPaths)
+            }
+            .disposed(by: disposeBag)
+        
+        searchView.collectionView.rx.modelSelected(MediaResult.Media.self)
+            .bind(with: self) { owner, result in
+                owner.presentDetailViewController(media: result, type: .movie, isPresent: true)
             }
             .disposed(by: disposeBag)
     }
