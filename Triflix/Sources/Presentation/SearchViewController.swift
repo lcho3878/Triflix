@@ -27,12 +27,18 @@ final class SearchViewController: UIViewController {
         configureCollectionView()
         bind()
     }
-    
+}
+
+// MARK: configureCollectionView
+extension SearchViewController {
     private func configureCollectionView() {
         searchView.collectionView.register(PosterImageCell.self, forCellWithReuseIdentifier: PosterImageCell.id)
         searchView.collectionView.showsVerticalScrollIndicator = false
     }
-    
+}
+
+// MARK: bind
+extension SearchViewController {
     private func bind() {
         let indexPathInput = PublishSubject<[IndexPath]>()
         

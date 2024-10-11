@@ -28,8 +28,10 @@ final class DetailViewController: UIViewController {
         configureCollectionView()
         bind()
     }
-    
-    // MARK: Functions
+}
+
+// MARK: configureCollectionView & configureNavigation
+extension DetailViewController {
     private func configureCollectionView() {
         detailView.collectionView.register(PosterImageCell.self, forCellWithReuseIdentifier: PosterImageCell.id)
         detailView.collectionView.showsVerticalScrollIndicator = false
@@ -40,7 +42,10 @@ final class DetailViewController: UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         navigationItem.backBarButtonItem?.tintColor = .white
     }
-    
+}
+
+// MARK: bind
+extension DetailViewController {
     private func bind() {
         let input = DetailViewModel.Input()
         let output = viewModel.transform(input: input)
@@ -77,7 +82,7 @@ final class DetailViewController: UIViewController {
                     cell.posterImageView.contentMode = .scaleAspectFit
                 }
             }
-            .disposed(by: disposeBag)  
+            .disposed(by: disposeBag)
         
         // modelSelected
         detailView.collectionView.rx.modelSelected(MediaResult.Media.self)
