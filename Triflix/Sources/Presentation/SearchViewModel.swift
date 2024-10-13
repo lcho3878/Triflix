@@ -27,19 +27,42 @@ final class SearchViewModel: ViewModelProtocol {
     
     struct Output {
         let searchData: PublishSubject<[Media]>
+        let presetnView: BehaviorSubject<Int>
     }
 }
 
 extension SearchViewModel {
     func transform(input: Input) -> Output {
-        Observable
-            .combineLatest(input.searchButtonClicked, input.searchQuery)
-            .flatMap { value in
-                self.query = value.1
-                return APIManager.shared.callRequest(api: .searchMovie(query: value.1, page: 1), type: MediaResult.self)
+//        Observable
+//            .combineLatest(input.searchButtonClicked, input.searchQuery)
+        let presentView = BehaviorSubject(value: 1)
+        let trendInput = BehaviorSubject(value: ())
+//        let queryInput = input.searchQuery.share()
+        input.searchQuery
+            .throttle(.seconds(1), scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+            .flatMap { query in
+                self.query = query
+                guard !query.isEmpty else {
+                    presentView.onNext(1)
+                    trendInput.onNext(())
+                    return Single<MediaResult>.never()
+                }
+                return APIManager.shared.callRequest(api: .searchMovie(query: query, page: 1), type: MediaResult.self)
             }
             .bind(with: self) { owner, result in
                 owner.pages = 1
+                owner.searchData = result.results
+                input.searchData.onNext(owner.searchData)
+                presentView.onNext(owner.searchData.isEmpty ? 3 : 2)
+            }
+            .disposed(by: disposeBag)
+        
+        trendInput
+            .flatMap {
+                return APIManager.shared.callRequest(api: .trendingMovie, type: MediaResult.self)
+            }
+            .bind(with: self) { owner, result in
                 owner.searchData = result.results
                 input.searchData.onNext(owner.searchData)
             }
@@ -49,7 +72,7 @@ extension SearchViewModel {
             .bind(with: self) { owner, indexPaths in
                 for indexPath in indexPaths {
                     if indexPath.item == owner.searchData.count - 4 {
-                        fetchMedia(page: self.pages)
+                        fetchMedia(page: owner.pages)
                     }
                 }
             }
@@ -66,6 +89,6 @@ extension SearchViewModel {
                 .disposed(by: disposeBag)
         }
         
-        return Output(searchData: input.searchData)
+        return Output(searchData: input.searchData, presetnView: presentView)
     }
 }
