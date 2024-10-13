@@ -9,8 +9,8 @@ import Foundation
 
 struct MediaDetail: Decodable, MediaType {
     let id: Int
-    let backdropPath: String
-    let posterPath: String
+    let backdropPath: String?
+    let posterPath: String?
     let title: String
     let overview: String
     let voteAverage: Double
@@ -28,8 +28,8 @@ struct MediaDetail: Decodable, MediaType {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(Int.self, forKey: .id)
-        backdropPath = try container.decode(String.self, forKey: .backdropPath)
-        posterPath = try container.decode(String.self, forKey: .posterPath)
+        backdropPath = try container.decode(String?.self, forKey: .backdropPath)
+        posterPath = try container.decode(String?.self, forKey: .posterPath)
         overview = try container.decode(String.self, forKey: .overview)
         voteAverage = try container.decode(Double.self, forKey: .voteAverage)
         
