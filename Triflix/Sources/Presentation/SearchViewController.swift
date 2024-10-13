@@ -63,6 +63,29 @@ extension SearchViewController {
             }
             .disposed(by: disposeBag)
         
+        output.presetnView
+            .bind(with: self) { owner, value in
+                switch value {
+                case 1: 
+                    owner.searchView.topTitleLabel.rx.text.onNext("추천 영화 & 시리즈")
+                    owner.searchView.collectionView.rx.isHidden.onNext(false)
+                    owner.searchView.emptyLabel.rx.isHidden.onNext(true)
+                    owner.searchView.topTitleLabel.rx.isHidden.onNext(false)
+                case 2:
+                    owner.searchView.topTitleLabel.rx.text.onNext("영화 & 시리즈")
+                    owner.searchView.collectionView.rx.isHidden.onNext(false)
+                    owner.searchView.emptyLabel.rx.isHidden.onNext(true)
+                    owner.searchView.topTitleLabel.rx.isHidden.onNext(false)
+                case 3:
+                    owner.searchView.topTitleLabel.rx.text.onNext("영화 & 시리즈")
+                    owner.searchView.collectionView.rx.isHidden.onNext(true)
+                    owner.searchView.emptyLabel.rx.isHidden.onNext(false)
+                    owner.searchView.topTitleLabel.rx.isHidden.onNext(true)
+                default: break
+                }
+            }
+            .disposed(by: disposeBag)
+        
         searchView.collectionView.rx.prefetchItems
             .bind(with: self) { owner, indexPaths in
                 indexPathInput.onNext(indexPaths)
