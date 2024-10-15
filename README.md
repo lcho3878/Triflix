@@ -54,12 +54,6 @@ Netflix 클론코딩 iOS어플리케이션 <br>
     - ViewModelProtocol을 통한 ViewModel 추상화
 - Repository패턴
     - Repository 패턴을 적용하여 Realm 데이터 소스에 대한 접근 추상화
-- UIKit
-- Rxswift, MVVM
-    - Rxswift를 활용한 ViewModel Input, Output, transform 패턴 적용
-    - ViewModelProtocol을 통한 ViewModel 추상화
-- Realm을 활용한 데이터 활용
-- Kingfisher
 
 <br>
 </br>
