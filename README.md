@@ -1,9 +1,8 @@
-# 🎬 Triflix
+# 🌤️ Triflix
 
 ```
 
   TMDB OPEN API를 활용한 영화 및 TV시리즈 검색 어플리케이션
-
 
 ```
 ---
@@ -13,15 +12,16 @@
 |:-:|:-:|:-:|:-:|
 |<img src="https://github.com/user-attachments/assets/0f10be55-1784-4f4e-a98c-60d0c1dbe973" width="150"/>|<img src="https://github.com/user-attachments/assets/20aec81f-5392-4dff-b6c7-8a6b19aa2e7c" width="150"/>|<img src="https://github.com/user-attachments/assets/833f6f7c-efd9-4532-9080-b72536a3621e" width="150"/>|<img src="https://github.com/user-attachments/assets/9806b21f-1339-4486-84ce-737fce42430c" width="150"/>|
 
-## 🍿 Table of Contents<br>
+## ⛈️ Table of Contents<br>
 1. [Description](#-description)
 2. [Stacks](#%EF%B8%8F-stacks)
 3. [Main Feature](#-main-feature)
-4. [Developer](#-developer)
+4. [Project Structure](#%EF%B8%8F-project-structure)
+5. [Developer](#-developer)
 
 <br>
 
-## 📜 Description
+## 🌟 Description
 TEAM : 이찬호, 김예진, 김생근
 
 Period : 24.10.08 ~ 24.10.14
@@ -30,7 +30,7 @@ Netflix 클론코딩 iOS어플리케이션 <br>
 
 </br>
 
-💡**기술 스택**
+💡**기능**
 
 - UIKit
 - Rxswift
@@ -54,12 +54,18 @@ Netflix 클론코딩 iOS어플리케이션 <br>
     - ViewModelProtocol을 통한 ViewModel 추상화
 - Repository패턴
     - Repository 패턴을 적용하여 Realm 데이터 소스에 대한 접근 추상화
+- UIKit
+- Rxswift, MVVM
+    - Rxswift를 활용한 ViewModel Input, Output, transform 패턴 적용
+    - ViewModelProtocol을 통한 ViewModel 추상화
+- Realm을 활용한 데이터 활용
+- Kingfisher
 
 <br>
 </br>
 
 ## 📱 Main Feature
-### 1) Trending Page 📼
+### 1) Trending Page 🌦️
 <table align="leading">
   <tr>
     <td align="center">Trending Page</td>
@@ -81,7 +87,7 @@ Netflix 클론코딩 iOS어플리케이션 <br>
 
 </br>
 
-### 2) Search Page 🔍
+### 2) Search Page 🌧️
 <table align="leading">
   <tr>
     <td align="center">Search Page</td>
@@ -101,7 +107,7 @@ Netflix 클론코딩 iOS어플리케이션 <br>
 
 </br>
 
-### 3) Detail Page 🎞️
+### 3) Detail Page 🌥️
 <table align="leading">
   <tr>
     <td align="center"> Detail Page </td>
@@ -126,14 +132,14 @@ Netflix 클론코딩 iOS어플리케이션 <br>
 
 </br>
 
-### 4) Favorite Page ❤️
+### 4) Favorite Page ⛅️
 <table align="leading">
   <tr>
     <td align="center"> Favorite Page</td>
     <td align="center"> 찜하기 취소</td>
   </tr>
   <tr>
-   <td><img width="250" alt="image" src="https://github.com/user-attachments/assets/6bd6bdec-c02a-4122-81e2-11bf1aedd88d"></td>
+   <td><img width="250" alt="image" src="https://github.com/user-attachments/assets/a48d1387-5f20-402a-9eb4-331ac5476401"></td>
    <td><img width="250" alt="image" src="https://github.com/user-attachments/assets/4501f929-2b84-40f0-8963-8ae8eabdd333"></td>
   </tr>
 </table>
@@ -149,7 +155,7 @@ Netflix 클론코딩 iOS어플리케이션 <br>
 <br>
 
 
-## 🏛️ Trouble shotting
+## 🏛️ Trouble shooting
 
  - Movie와 TVSeries 응답 모델의 일부가 달라서 발생한 문제
     - Movie는 title, TVSeires는 name이라는 데이터를 같은 기능을 위한 데이터였기 때문에 같은 모델을 사용하여 코드를 간소화 하고자 하였다.
@@ -165,7 +171,12 @@ Netflix 클론코딩 iOS어플리케이션 <br>
   |:-:|:-:|:-:|
   |ChanHo<br/>[@lcho3878](https://github.com/lcho3878)|YeJin<br/>[@yeggrrr](https://github.com/yeggrrr)|Saengle<br/>[@Saengle](https://github.com/saengle)|
 
-
+### 📚 팀 회고 
+> - 팀원들 모두 이번 협업 주제와 비슷한 프로젝트를 해본 경험은 있었지만, 터미널과 깃허브를 통한 협업을 진행해본 경험은 없었기에 협업에 중점을 두고 프로젝트를 진행해보았습니다.
+> - 기간이 짧고 비교적 규모가 작은 프로젝트 인점을 감안하여, Github flow 전략을 채택하였고 기능별 브랜치를 merge하는 경우에는 팀원끼리 코드 리뷰를 하며 conflict를 최소화 하였습니다.
+> - 짧은 기간이었지만, terminal을 활용하여 git 협업하는 방법에 익숙해지는 시간이었습니다.
+>   
+### 📚 개인 회고
 > -  **이찬호** 
 >     - 초기에 필요한 부분들을 잘 계획하고 프로젝트를 시작했다고 생각했으나, 기획에 시간을 많이 들이는 것이 필요하다고 느꼈다. extension이나 캡슐화를 통해서 기능들을 공유하기 위해서는 겹치는 기능과 그렇지 않은 기능에 대한 소통이 충분히 필요함을 느꼈다.
 >     - 코드의 구조와 기능적인 부분에서는 조금 아쉬움이 남더라도, 협업을 하는 부분에서 큰 문제없이 1주일 동안 잘 진행된 것 같아서 좋은 경험이었다.
