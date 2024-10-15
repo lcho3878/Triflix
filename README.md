@@ -16,7 +16,7 @@
 1. [Description](#-description)
 2. [Stacks](#%EF%B8%8F-stacks)
 3. [Main Feature](#-main-feature)
-4. [Trouble Shotting](#trouble-shooting)
+4. [Trouble Shooting](#trouble-shooting)
 5. [Developer](#-developer)
 
 <br>
