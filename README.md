@@ -1,4 +1,4 @@
-# 🌤️ Triflix
+# 🎥 Triflix
 
 ```
 
@@ -12,16 +12,16 @@
 |:-:|:-:|:-:|:-:|
 |<img src="https://github.com/user-attachments/assets/0f10be55-1784-4f4e-a98c-60d0c1dbe973" width="150"/>|<img src="https://github.com/user-attachments/assets/20aec81f-5392-4dff-b6c7-8a6b19aa2e7c" width="150"/>|<img src="https://github.com/user-attachments/assets/833f6f7c-efd9-4532-9080-b72536a3621e" width="150"/>|<img src="https://github.com/user-attachments/assets/9806b21f-1339-4486-84ce-737fce42430c" width="150"/>|
 
-## ⛈️ Table of Contents<br>
+## 🍿 Table of Contents<br>
 1. [Description](#-description)
 2. [Stacks](#%EF%B8%8F-stacks)
 3. [Main Feature](#-main-feature)
-4. [Project Structure](#%EF%B8%8F-project-structure)
+4. [Trouble Shotting](#trouble-shooting)
 5. [Developer](#-developer)
 
 <br>
 
-## 🌟 Description
+## 📖 Description
 TEAM : 이찬호, 김예진, 김생근
 
 Period : 24.10.08 ~ 24.10.14
@@ -30,7 +30,7 @@ Netflix 클론코딩 iOS어플리케이션 <br>
 
 </br>
 
-💡**기능**
+### 기능
 
 - UIKit
 - Rxswift
@@ -54,18 +54,12 @@ Netflix 클론코딩 iOS어플리케이션 <br>
     - ViewModelProtocol을 통한 ViewModel 추상화
 - Repository패턴
     - Repository 패턴을 적용하여 Realm 데이터 소스에 대한 접근 추상화
-- UIKit
-- Rxswift, MVVM
-    - Rxswift를 활용한 ViewModel Input, Output, transform 패턴 적용
-    - ViewModelProtocol을 통한 ViewModel 추상화
-- Realm을 활용한 데이터 활용
-- Kingfisher
 
 <br>
 </br>
 
 ## 📱 Main Feature
-### 1) Trending Page 🌦️
+### 1) Trending Page 🎬
 <table align="leading">
   <tr>
     <td align="center">Trending Page</td>
@@ -87,7 +81,7 @@ Netflix 클론코딩 iOS어플리케이션 <br>
 
 </br>
 
-### 2) Search Page 🌧️
+### 2) Search Page 👀
 <table align="leading">
   <tr>
     <td align="center">Search Page</td>
@@ -107,7 +101,7 @@ Netflix 클론코딩 iOS어플리케이션 <br>
 
 </br>
 
-### 3) Detail Page 🌥️
+### 3) Detail Page 📖
 <table align="leading">
   <tr>
     <td align="center"> Detail Page </td>
@@ -132,7 +126,7 @@ Netflix 클론코딩 iOS어플리케이션 <br>
 
 </br>
 
-### 4) Favorite Page ⛅️
+### 4) Favorite Page 🫰🏻
 <table align="leading">
   <tr>
     <td align="center"> Favorite Page</td>
@@ -155,7 +149,7 @@ Netflix 클론코딩 iOS어플리케이션 <br>
 <br>
 
 
-## 🏛️ Trouble shooting
+## ⚽️Trouble shooting
 
  - Movie와 TVSeries 응답 모델의 일부가 달라서 발생한 문제
     - Movie는 title, TVSeires는 name이라는 데이터를 같은 기능을 위한 데이터였기 때문에 같은 모델을 사용하여 코드를 간소화 하고자 하였다.
@@ -164,9 +158,13 @@ Netflix 클론코딩 iOS어플리케이션 <br>
     - Realm을 사용하여 찜한 미디어를 저장하기 위해 구성했던 Repository의 메서드가 DetailView의 응답모델을 기반으로 작성되었기 때문에, 이를 수정하기 위해서 많은 코드의 수정이 필요해보였다.
     - Realm DB에 저장하기 위해 필요한 프로퍼티를 가진 MediaType 프로토콜을 생성하여 TrendingView, DetailView의 응답모델에 적용 및 Repository의 메서드가 MediaType을 인자로 가지도록 수정하여 해결하였다.
 
+<br>
+
 ## 👨‍👩‍👧‍👦 Developer
 
-## 👥 참여 인원
+
+### 👥 참여 인원
+
   |<img src="https://avatars.githubusercontent.com/u/74814587?v=4)" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/161591832?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/100755761?v=4" width="150" height="150"/>|
   |:-:|:-:|:-:|
   |ChanHo<br/>[@lcho3878](https://github.com/lcho3878)|YeJin<br/>[@yeggrrr](https://github.com/yeggrrr)|Saengle<br/>[@Saengle](https://github.com/saengle)|
