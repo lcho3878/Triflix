@@ -1,4 +1,4 @@
-# 🌤️ Triflix
+# 🎬 Triflix
 
 ```
 
@@ -13,16 +13,15 @@
 |:-:|:-:|:-:|:-:|
 |<img src="https://github.com/user-attachments/assets/0f10be55-1784-4f4e-a98c-60d0c1dbe973" width="150"/>|<img src="https://github.com/user-attachments/assets/20aec81f-5392-4dff-b6c7-8a6b19aa2e7c" width="150"/>|<img src="https://github.com/user-attachments/assets/833f6f7c-efd9-4532-9080-b72536a3621e" width="150"/>|<img src="https://github.com/user-attachments/assets/9806b21f-1339-4486-84ce-737fce42430c" width="150"/>|
 
-## ⛈️ Table of Contents<br>
+## 🍿 Table of Contents<br>
 1. [Description](#-description)
 2. [Stacks](#%EF%B8%8F-stacks)
 3. [Main Feature](#-main-feature)
-4. [Project Structure](#%EF%B8%8F-project-structure)
-5. [Developer](#-developer)
+4. [Developer](#-developer)
 
 <br>
 
-## 🌟 Description
+## 📜 Description
 TEAM : 이찬호, 김예진, 김생근
 
 Period : 24.10.08 ~ 24.10.14
@@ -31,7 +30,7 @@ Netflix 클론코딩 iOS어플리케이션 <br>
 
 </br>
 
-💡**기능**
+💡**기술 스택**
 
 - UIKit
 - Rxswift
@@ -66,7 +65,7 @@ Netflix 클론코딩 iOS어플리케이션 <br>
 </br>
 
 ## 📱 Main Feature
-### 1) Trending Page 🌦️
+### 1) Trending Page 📼
 <table align="leading">
   <tr>
     <td align="center">Trending Page</td>
@@ -88,7 +87,7 @@ Netflix 클론코딩 iOS어플리케이션 <br>
 
 </br>
 
-### 2) Search Page 🌧️
+### 2) Search Page 🔍
 <table align="leading">
   <tr>
     <td align="center">Search Page</td>
@@ -108,7 +107,7 @@ Netflix 클론코딩 iOS어플리케이션 <br>
 
 </br>
 
-### 3) Detail Page 🌥️
+### 3) Detail Page 🎞️
 <table align="leading">
   <tr>
     <td align="center"> Detail Page </td>
@@ -133,7 +132,7 @@ Netflix 클론코딩 iOS어플리케이션 <br>
 
 </br>
 
-### 4) Favorite Page ⛅️
+### 4) Favorite Page ❤️
 <table align="leading">
   <tr>
     <td align="center"> Favorite Page</td>
