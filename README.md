@@ -149,7 +149,7 @@ Netflix 클론코딩 iOS어플리케이션 <br>
 <br>
 
 
-## ⚽️Trouble shooting
+## ⚽️ Trouble Shooting
 
  - Movie와 TVSeries 응답 모델의 일부가 달라서 발생한 문제
     - Movie는 title, TVSeires는 name이라는 데이터를 같은 기능을 위한 데이터였기 때문에 같은 모델을 사용하여 코드를 간소화 하고자 하였다.
