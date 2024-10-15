@@ -74,15 +74,7 @@ extension DetailViewController {
         // similarData
         output.similarData
             .bind(to: detailView.collectionView.rx.items(cellIdentifier: PosterImageCell.id, cellType: PosterImageCell.self)) { (row, element, cell) in
-                if let imageData = element.poster_path {
-                    let imageURL = URL(string: "https://image.tmdb.org/t/p/w500\(imageData)")
-                    cell.posterImageView.kf.setImage(with: imageURL, options: [.transition(.fade(0.7))])
-                    cell.posterImageView.kf.indicatorType = .activity
-                } else {
-                    cell.posterImageView.image = UIImage(systemName: "movieclapper")
-                    cell.posterImageView.tintColor = .white
-                    cell.posterImageView.contentMode = .scaleAspectFit
-                }
+                cell.configureData(posterPath: element.poster_path)
             }
             .disposed(by: disposeBag)
         
@@ -107,17 +99,18 @@ extension DetailViewController {
         Observable.combineLatest(detailView.saveButton.rx.tap, output.detailData)
             .bind(with: self) { owner, value in
                 MediaRepository.shared.addMedia(media: value.1, type: owner.viewModel.type, image: owner.detailView.posterImageView.image) {
-                    let alert = AlertViewController()
-                    alert.alertView.titleLabel.text = "이미 저장된 미디어에요 :)"
-                    alert.modalPresentationStyle = .overFullScreen
-                    owner.present(alert, animated: true)
+                    owner.showAlert(text: "이미 저장된 미디어에요 :)")
                 } success: {
-                    let alert = AlertViewController()
-                    alert.alertView.titleLabel.text = "미디어를 저장했어요 :)"
-                    alert.modalPresentationStyle = .overFullScreen
-                    owner.present(alert, animated: true)
+                    owner.showAlert(text: "미디어를 저장했어요 :)")
                 }
             }
             .disposed(by: disposeBag)
+    }
+    
+    func showAlert(text: String) {
+        let alert = AlertViewController()
+        alert.alertView.titleLabel.text = text
+        alert.modalPresentationStyle = .overFullScreen
+        self.present(alert, animated: true)
     }
 }

@@ -35,4 +35,16 @@ final class PosterImageCell: UICollectionViewCell {
         posterImageView.contentMode = .scaleAspectFill
         posterImageView.clipsToBounds = true
     }
+    
+    func configureData(posterPath: String?) {
+        if let imageData = posterPath {
+            let imageURL = URL(string: "https://image.tmdb.org/t/p/w500\(imageData)")
+            posterImageView.kf.setImage(with: imageURL, options: [.transition(.fade(0.7))])
+            posterImageView.kf.indicatorType = .activity
+        } else {
+            posterImageView.image = UIImage(systemName: "movieclapper")
+            posterImageView.tintColor = .white
+            posterImageView.contentMode = .scaleAspectFit
+        }
+    }
 }
